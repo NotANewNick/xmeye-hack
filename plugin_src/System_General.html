@@ -1,0 +1,120 @@
+<div class="cfg_container">
+	<div class="cfg_row" id="table_time_zone">
+		<div class="cfg_row_left" id="TimeZone2">Time Zone</div>
+		<div class="cfg_row_right">
+			<select id="SelTimeZone2" class="select"></select>
+		</div>
+	</div>
+	<div class="cfg_row" id="table_sys_time">
+		<div class="cfg_row_left" id="SystemTime">System Time</div>
+		<div class="cfg_row_right">
+			<div class="inlinebox">
+				<input class="" id="SysDate" readonly="readonly" type="text" style="height:23px; width:120px;" data-date=""/>
+			</div>
+			<div class="inlinebox">
+				<div id="SysTime" style="height:25px; overflow:hidden;"></div>
+			</div>
+			<div class="inlinebox" id="TimeZone" style="margin-left: 34px; display: none;">Time Zone</div>
+			<div class="inlinebox">
+				<select id="SelTimeZone" style="width: 120px; height:25px; display: none;"></select>
+			</div>
+		</div>
+	</div>
+	<div class="cfg_row" id="table_date_format">
+		<div class="cfg_row_left" id="DataFormat">Data Format</div>
+		<div class="cfg_row_right">
+			<div class="inlinebox">
+				<select id="SelDataFormat" style="width: 120px;height: 25px;"></select>
+			</div>
+			<div class="inlinebox">
+				<div id="DstEnable" style="margin: 5px 0 0 100px;">
+					<span>
+						<input id="DstCheckBox" type="checkbox"/>
+						<label for="DstCheckBox" id="DstLable">DST</label>
+					</span>
+				</div>
+			</div>
+			<div class="inlinebox" id="DstSettingBox">
+				<button class="btn SvBtnState" id="DstSetting">Setting</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="cfg_row" id="table_date_separator">
+		<div class="cfg_row_left" id="DateSeparator">Date Separator</div>
+		<div class="cfg_row_right">
+			<select class="select" id="SelDateSeparator">
+				<option value="0">.</option>
+				<option value="1">-</option>
+				<option value="2">/</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="cfg_row" id="table_time_format">
+		<div class="cfg_row_left" id="TimeFormat">Time Format</div>
+		<div class="cfg_row_right">
+			<select id="SelTimeFormat" class="select"></select>
+		</div>
+	</div>
+
+	<div class="cfg_row" id="table_language">
+		<div class="cfg_row_left" id="Lang">Language</div>
+		<div class="cfg_row_right">
+			<select id="SelLanguage" class="select"></select>
+		</div>
+	</div>
+	
+	<div class="cfg_row" id="table_hdd_full">
+		<div class="cfg_row_left" id="HddFull">HDD Full</div>
+		<div class="cfg_row_right">
+			<select id="SelHddFull" class="select"></select>
+		</div>
+	</div>
+	
+	<div class="cfg_row" id="table_remote_addr">
+		<div class="cfg_row_left" id="RemoteAddr">Dev No</div>
+		<div class="cfg_row_right">
+			<input id="InputRemoteAddr" class="inputTxt"
+			onkeyup="if(keyboardFilter(event)) {NumberRangeMaxEx(this, 998)}"
+			onblur="if(this.value == '') this.value='0'"/>
+		</div>
+	</div>
+
+	<div class="cfg_row" id="table_video_mode">
+		<div class="cfg_row_left" id="VideoMode">Video Standard</div>
+		<div class="cfg_row_right">
+			<select id="SelVideoMode" class="select"></select>
+		</div>
+	</div>
+	
+	<div class="cfg_row" id="table_standby_time">
+		<div class="cfg_row_left" id="StandByTime">Auto Logout</div>
+		<div class="cfg_row_right">
+			<input id="InputStandByTime" class="inputTxt" style="width: 298px; height: 23px;"
+			onkeyup="if(keyboardFilter(event)) {NumberRangeMaxEx(this, 60)}"
+			onblur="if(this.value == '') this.value='0'"/>
+			<label id="MinuteLab">Min</label>
+		</div>
+	</div>
+	<div class="cfg_row" id="table_Machine_Name">
+		<div class="cfg_row_left" id="MachineName">MachineName</div>
+		<div class="cfg_row_right">
+			<input id="InputMachineName" class="inputTxt" maxlength="32" style="width: 298px; height: 23px;"
+			onkeyup="if(keyboardFilter(event)) {BytesRangeMax(this, 32);}"
+			onblur="BytesRangeMax(this, 32);" />
+		</div>
+	</div>
+	
+	
+	<div id="PiTimer1" style="width: 285px; height: 0px; overflow: hidden;"></div>
+	<iframe id="iframe1" style="width: 0px; height: 0px; border: 0px; overflow: hidden;position: absolute"></iframe>
+
+	<div class="cfg_row">
+		<div class="btn_box">
+			<button class="btn" id="BtnRefresh">Refresh</button>
+			<button class="btn SvBtnState" id="BtnSave">Save</button>
+		</div>
+	</div>
+</div>
+

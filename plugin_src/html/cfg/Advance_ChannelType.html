@@ -1,0 +1,63 @@
+<div class="cfg_container">
+	<div id="ChanTypeList" style="margin-bottom:5px">
+		<div class="table-responsive">
+			<div class="table-head" id="firstHead">
+				<table id="firstHeadTable" class="table grid" style="margin-bottom:0">
+				</table>
+			</div>
+			<div class="table-head" id="secondHead">
+				<table id="secondHeadTable" class="table grid" style="margin-bottom:0">
+				</table>
+			</div>
+			<div class="table-content" style="overflow-x:hidden;">
+				<table id="ChanTypeTable" class="table grid">
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	<div class="cfg_row" id="ChnTipDiv">
+		<div id="PlayBackMaxDiv" style="float:left">
+			<label id="PlayBackMaxL">Max support channel of playback :</label>
+			<label id="PlayBackMax" style="margin-left:3px;"></label>
+		</div>
+		<div id="DefaultPBMaxDiv" style="float:left; margin-left:75px;">
+			<label id="DefaultPBMaxL">Defaults :</label>
+			<label id="DefaultPBMax" style="margin-left:3px;"></label>
+		</div>
+	</div>
+	<div class="cfg_row" id="PreviewMaxTipDiv">
+		<label id="PreviewMaxL">Max support channel of preview :</label>
+		<label id="PreviewMaxNum" style="margin-left:3px;"></label>
+	</div>
+	<div class="cfg_row" id="PreviewMaxDiv">
+		<div class="cfg_row_left" id="PreviewMaxChannelL">Max support channel of preview :</div>
+		<div class="cfg_row_right">
+			<select class="select" id="PreviewMaxChannel" style="width:150px;">
+			</select>
+		</div>
+	</div>
+
+	<div id="DABox">
+		<div class="check-btn-box" id="ModuleCustomDiv" style="margin-bottom:5px">
+			<span>			
+				<input id="ModuleCustom" type="checkbox"/>
+				<label for="ModuleCustom"  id="CustomTxt">Custom</label>
+			</span>
+			<div class="radio-btn-box" id="ModuleChan" style="width:auto; margin-top:3px">	
+			</div>
+		</div>
+		
+		<div id="ModuleView" style="position:relative;">
+			<div class="MaskDiv"></div>
+			<table id="ChnDATab" class="table">      
+			</table>
+		</div>
+	</div>
+	<div class="cfg_row">
+		<div class="btn_box" style="margin: 10px 0 0 -14px">
+			<button id="ModeRf" class="btn">Refresh</button>
+			<button id="ModeSave" class="btn autoWidth">Save</button>
+		</div>
+	</div>
+</div>

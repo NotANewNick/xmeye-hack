@@ -1,0 +1,161 @@
+<div class="cfg_container alarm" id="table_VB">
+    <div class="cfg_row" id="table_channel">
+        <div class="cfg_row_left" id="channels_num">Channel</div>
+        <div class="cfg_row_right">
+            <select class="select" id="VBChid"></select>
+        </div>
+    </div>
+	<div class="cfg_row" id="table_sense">
+		<div class="cfg_row_left" id="start_sense">Enable</div>
+		<div class="cfg_row_right">
+			<input type="button" class="switch" id="VBChnSwitch" data=''/>
+		</div>
+	</div>
+
+    <div id="VBDivBoxAll">
+        <div class="cfg_row" id="VBSense">
+            <div class="cfg_row_left" id="sense_grade">Sensitivity</div>
+            <div class="cfg_row_right">
+                <select class="select" id="VBSensitivity">               
+                </select>
+            </div>
+        </div>
+		<div class="cfg_row">
+			<div class="split"></div>
+		</div>
+		<div class="cfg_row">
+			<div class="cfg_row_left" id="VB_PeriodL">Period</div>
+			<div class="cfg_row_right">
+				<button id="VB_Period" class="btn" style="margin-left:0px;">Setting</button>
+			</div>
+		</div>
+		
+		<div id="VB_AOEvent" class="cfg_row" style="position:relative;">
+			<div class="MaskDiv"></div>
+			<div class="first">
+				<div class="cfg_row_left" id="VBAOL">Alarm Output</div>
+				<div class="cfg_row_right rightEx" id="VB_AOChannelDiv">	
+				</div>
+			</div>
+			<div id="VB_AODelayDiv" class="second">
+				<div class="cfg_row_left" id="VBAODelayL">Delay</div>
+				<div class="cfg_row_right">
+					<input id="VBAODelay" class="inputTxt timeTxt" 
+					onkeyup="if(keyboardFilter(event)) {NumberRangeMax(this, 300)}"
+					onblur="NumberRange(this, 10, 300, -1)" />
+					<label id="VBAOSec">Sec(10-300)</label>
+				</div>
+			</div>
+		</div>
+		<div id="MulityAlarmLinkBox">
+			<div id="VB_DivBoxRecord" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="VB_RecordCH">
+					<div class="cfg_row_left" id="VBrecord_channel">Record channel</div>
+					<div class="cfg_row_right rightEx" id="VB_RecChannelDiv"></div>
+				</div>
+			</div>
+
+			<div id="VB_DivBoxTour" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="VB_TourCH">
+					<div class="cfg_row_left" id="VBtour_channel">Tour</div>
+					<div class="cfg_row_right rightEx" id="VB_TourChannelDiv"></div>
+				</div>
+			</div>		
+			
+			<div id="VB_DivBoxSnap" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="VB_SnapCH">
+					<div class="cfg_row_left" id="VBsnap_channel">Snap Channel</div>
+					<div class="cfg_row_right rightEx" id="VB_SnapChannelDiv"></div>
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row">
+			<div id="VB_PTZSetDiv" class="first">
+				<div class="cfg_row_left" id="VB_PTZSetL">PTZ Activation</div>
+				<div class="cfg_row_right">
+					<button id="VB_PTZSet" class="btn" style="margin-left:0px">Setting</button>
+				</div>
+			</div>
+			<div id="VB_RecordDelayDiv" class="second">
+				<div class="cfg_row_left" id="VBRecordDelayL">Post Record</div>
+				<div class="cfg_row_right">
+					<input id="VBRecordDelay" class="inputTxt timeTxt" 
+					onkeyup="if(keyboardFilter(event)) {NumberRangeMax(this, 300)}"
+					onblur="NumberRangeMin(this,10)" />
+					<label id="VBRecordSec">Sec(10-300)</label>
+				</div>
+			</div>
+		</div>	
+		<div class="cfg_row" id="bl_Alarm_tone">
+			<div class="cfg_row_left" id="bl_alarm_toneL">alarm tone</div>
+			<div class="cfg_row_right" style="width: auto;">
+				<select class="select voiceTypeSelect" id="bl_AbAlarmToneType"></select>
+				<span id="bl_alarmAndCustom">
+					<select class="select customSelect" id="bl_AbAlarmTone" ></select>
+					<button id="bl_AbAlarmToneCustomButton" class="btn" style="margin-left:0px;float:none;"></button>
+				</span>
+			</div>
+		</div>
+		<div class="check-btn-box group-box" id="AlarmLinkBox" style="margin-top:5px; display:none;">
+			<span id="VB_RecordBox">
+				<input id="VBRecord" type="checkbox"/>
+				<label for="VBRecord" id="VBRecordL">Record</label>
+			</span>
+			<span id="VB_TourBox">
+				<input id="VBTour" type="checkbox"/>
+				<label for="VBTour" id="VBTourL">Tour</label>
+			</span>
+			<span id="VB_SnapBox">
+				<input id="VBSnap" type="checkbox"/>
+				<label for="VBSnap" id="VBSnapL">Snap Channel</label>
+			</span>
+		</div>
+		<div class="check-btn-box" id="VB_enableBox" style="margin-top:15px">
+			<span id="VB_ShowMessageBox" style="display: none;">
+				<input id="VBShowMessage" type="checkbox"/>
+				<label for="VBShowMessage" id="VBshow_message">Show Message</label>
+			</span>
+			<span id="VB_SendEmailBox">
+				<input id="VBSendEmail" type="checkbox"/>
+				<label for="VBSendEmail" id="VBsendEmailL">Send Email</label>				
+			</span>					
+			<span id="VB_PhoneBox">
+				<input id="VBPhone" type="checkbox"/>
+				<label for="VBPhone" id="VBPhoneL">APP Push</label>				
+			</span>
+			<span id="VB_FTPBox">
+				<input id="VBFTP" type="checkbox"/>
+				<label for="VBFTP" id="VBFTPL">FTP</label>				
+			</span>
+			<span id="VB_WriteLogBox">
+				<input id="VBWriteLog" type="checkbox"/>
+				<label for="VBWriteLog" id="VBWriteLogL">Write Log</label>				
+			</span>
+		</div>
+    </div>
+    <div class="cfg_row">
+        <div class="btn_box" id="vb_btn_box">
+			<button id="VBCP" class="btn">Copy</button>
+            <button id="VBPaste" class="btn">Paste</button>
+			<button id="VBDefault" class="btn" style="display: none;">Default</button>
+            <button id="VBRf" class="btn">Refresh</button>
+            <button id="VBSave" class="btn SvBtnState">Save</button>
+        </div>
+    </div>
+    <!-- channel copy -->
+    <div class="copy_box" id="vbCopyTD" style="display:none;">
+        <div class="cfg_row" id="table_cp_d">
+            <div id="vbSelectCopy">Please select the channel you want to copy</div>
+        </div>
+
+        <div class="cfg_row" id="table_cp_ok">
+            <input type="checkbox" id="vbck" class="AllCheck" />
+            <label for="vbck"><font id="vbSelectedAll"> All</font></label>
+
+            <div class="copy_btn" id="vbOk">Copy</div>
+        </div>
+    </div>
+</div>

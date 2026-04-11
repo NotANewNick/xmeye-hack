@@ -1,0 +1,132 @@
+<div class="cfg_container alarm">
+    <div class="cfg_row" id="Snap_CHN_TABLE">
+		<div class="cfg_row_left" id="Snap_channel_num">channel</div>
+		<div class="cfg_row_right">
+			<select class="select" id="SnapChid"></select>
+		</div>
+    </div>
+	
+	<div class="cfg_row" id="PreCapture_div" style="display:none">
+		<div class="cfg_row_left" id="PreCaptureL">PreSnap</div>
+		<div class="cfg_row_right">
+			<input class="inputTxt" id="PreCapture" maxlength="1"
+			onkeyup="if(keyboardFilter(event)) {NumberRange(this, 1, 3, -1)}"
+			onblur="NumberRange(this, 1, 3, -1)" />
+			<label id="PictureL">Pictures</label>
+		</div>
+	</div>
+	
+	<div class="cfg_row" id="SnapModeBox">
+		<div class="cfg_row_left" id="SnapModeL">Capture Mode</div>
+		<div class="radio-btn-box cfg_row_right" id="SnapMode_Div">
+			<span id="AutoDiv">
+				<input type="radio" name="a" id="AutoMode" value="ConfigSnap"/>
+				<label for="AutoMode" id="SnapAutoL">Timming</label>
+			</span>
+			<span id="ManualDiv">
+				<input type="radio" name="a" id="ManualMode" value="ManualSnap"/>
+				<label for="ManualMode" id="SnapManualL">Manual</label>
+			</span>
+			<span id="ClosedDiv">
+				<input type="radio" name="a" id="ClosedMode" value="ClosedSnap"/>
+				<label for="ClosedMode" id="SnapClosedL">Stop</label>
+			</span>
+		</div>
+	</div>
+	
+	<div class="cfg_row" id="SnapWeek_TABLE">
+		<div class="cfg_row_left" id="SnapWeekL">Week</div>
+		<div class="cfg_row_right">
+			<select class="select" id="SnapWeekChid" style="float: left;"></select>
+			<div class="recmask" id="RecordModeTip">
+				<div class="rectip" id="SnapNormalTip">Regular</div>
+				<div class="rectip" id="SnapMotionTip">Detect</div>
+				<div class="rectip" id="SnapAlarmTip">Alarm</div>	
+			</div>
+		</div>
+    </div>
+	
+	<div id="SnapTimeSectBox">
+		<div class="cfg_row" id="Sect1">		
+			<div class="cfg_row_left" id="SnapSect1L">Period 1</div>
+			<div class="cfg_row_right">
+				<div id="secttime1" class="recsect">
+					<input id="StartHour1" class="inputTxt rectime" /><label class='timeSplit'>:</label>
+					<input id="StartMinute1" class="inputTxt rectime" /><label class='timeSpace'>-</label>
+					<input id="EndHour1" class="inputTxt rectime"  /><label class='timeSplit'>:</label>
+					<input id="EndMinute1" class="inputTxt rectime" />
+				</div>
+				
+				<div id="RecMask1" class="recmask">
+					<span><input id="Normal1" type="checkbox"/><label for="Normal1">&nbsp;</label></span>
+					<span><input id="Motion1" type="checkbox"/><label for="Motion1">&nbsp;</label></span>			
+					<span id="Alarm1Span"><input id="Alarm1" type="checkbox"/><label for="Alarm1">&nbsp;</label></span>			
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row" id="Sect2">
+			<div class="cfg_row_left" id="SnapSect2L">Period 2</div>
+			<div class="cfg_row_right">
+				<div id="secttime2" class="recsect">
+					<input id="StartHour2" class="inputTxt rectime" /><label class='timeSplit'>:</label>
+					<input id="StartMinute2" class="inputTxt rectime" /><label class='timeSpace'>-</label>
+					<input id="EndHour2" class="inputTxt rectime"  /><label class='timeSplit'>:</label>
+					<input id="EndMinute2" class="inputTxt rectime" />
+				</div>
+				
+				<div id="RecMask2" class="recmask">
+					<span><input id="Normal2" type="checkbox"/><label for="Normal2">&nbsp;</label></span>
+					<span><input id="Motion2" type="checkbox"/><label for="Motion2">&nbsp;</label></span>			
+					<span id="Alarm2Span"><input id="Alarm2" type="checkbox"/><label for="Alarm2">&nbsp;</label></span>			
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row" id="Sect3">
+			<div class="cfg_row_left" id="SnapSect3L">Period 3</div>
+			<div class="cfg_row_right">
+				<div id="secttime3" class="recsect">
+					<input id="StartHour3" class="inputTxt rectime" /><label class='timeSplit'>:</label>
+					<input id="StartMinute3" class="inputTxt rectime" /><label class='timeSpace'>-</label>
+					<input id="EndHour3" class="inputTxt rectime"  /><label class='timeSplit'>:</label>
+					<input id="EndMinute3" class="inputTxt rectime" />
+				</div>
+				
+				<div id="RecMask3" class="recmask">
+					<span><input id="Normal3" type="checkbox"/><label for="Normal3">&nbsp;</label></span>
+					<span><input id="Motion3" type="checkbox"/><label for="Motion3">&nbsp;</label></span>			
+					<span id="Alarm3Span"><input id="Alarm3" type="checkbox"/><label for="Alarm3">&nbsp;</label></span>			
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row" id="Sect4">
+			<div class="cfg_row_left" id="SnapSect4L">Period 4</div>
+			<div class="cfg_row_right">
+				<div id="secttime4" class="recsect">
+					<input id="StartHour4" class="inputTxt rectime" /><label class='timeSplit'>:</label>
+					<input id="StartMinute4" class="inputTxt rectime" /><label class='timeSpace'>-</label>
+					<input id="EndHour4" class="inputTxt rectime"  /><label class='timeSplit'>:</label>
+					<input id="EndMinute4" class="inputTxt rectime" />
+				</div>
+				
+				<div id="RecMask4" class="recmask">
+					<span><input id="Normal4" type="checkbox"/><label for="Normal4">&nbsp;</label></span>
+					<span><input id="Motion4" type="checkbox"/><label for="Motion4">&nbsp;</label></span>			
+					<span id="Alarm4Span"><input id="Alarm4" type="checkbox"/><label for="Alarm4">&nbsp;</label></span>			
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <div class="cfg_row">
+        <div class="btn_box" style="margin-left:115px">
+			<button id="SnapCP" class="btn">Copy</button>
+			<button id="SnapPA" class="btn">Paste</button>
+			<button id="SnapDefault" class="btn" style="display:none;">Default</button>
+            <button id="SnapRF" class="btn">Refresh</button>
+            <button id="SnapSave" class="btn SvBtnState">Save</button> 
+        </div>
+    </div>
+</div>
+
+
+

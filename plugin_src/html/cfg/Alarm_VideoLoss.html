@@ -1,0 +1,155 @@
+<div class="cfg_container alarm" id="table_VL">
+    <div class="cfg_row" id="table_channel">
+        <div class="cfg_row_left" id="channels_num">Channel</div>
+        <div class="cfg_row_right">
+            <select class="select" id="VLChid"></select>
+        </div>
+    </div>
+	<div class="cfg_row" id="table_sense">
+		<div class="cfg_row_left" id="start_sense">Enable</div>
+		<div class="cfg_row_right">
+			<input type="button" class="switch" id="VLChnSwitch" data=''/>
+		</div>
+	</div>
+	<div class="cfg_row">
+		<div class="split"></div>
+	</div>
+    <div id="VLDivBoxAll">
+		<div class="cfg_row">
+			<div class="cfg_row_left" id="VL_PeriodL">Period</div>
+			<div class="cfg_row_right">
+				<button id="VL_Period" class="btn" style="margin-left:0px;">Setting</button>
+			</div>
+		</div>
+		
+		<div id="VL_AOEvent" class="cfg_row" style="position:relative;">
+			<div class="MaskDiv"></div>
+			<div class="first">
+				<div class="cfg_row_left" id="VLAOL">Alarm Output</div>
+				<div class="cfg_row_right rightEx" id="VL_AOChannelDiv">
+				</div>
+			</div>
+			<div id="VL_AODelayDiv" class="second">
+				<div class="cfg_row_left" id="VLAODelayL">Delay</div>
+				<div class="cfg_row_right">
+					<input id="VLAODelay" class="inputTxt timeTxt" 
+					onkeyup="if(keyboardFilter(event)) {NumberRangeMax(this, 300)}"
+					onblur="NumberRange(this, 10, 300, -1)" />
+					<label id="VLAOSec">Sec(10-300)</label>
+				</div>
+			</div>
+		</div>
+		<div id="MulityAlarmLinkBox">
+			<div id="VL_DivBoxRecord" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="VL_RecordCH">
+					<div class="cfg_row_left" id="VLrecord_channel">Record channel</div>
+					<div class="cfg_row_right rightEx" id="VL_RecChannelDiv"></div>
+				</div>
+			</div>
+
+			<div id="VL_DivBoxTour" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="VL_TourCH">
+					<div class="cfg_row_left" id="VLtour_channel">Tour</div>
+					<div class="cfg_row_right rightEx" id="VL_TourChannelDiv"></div>
+				</div>
+			</div>		
+		
+			<div id="VL_DivBoxSnap" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="VL_SnapCH">
+					<div class="cfg_row_left" id="VLsnap_channel">Snap Channel</div>
+					<div class="cfg_row_right rightEx" id="VL_SnapChannelDiv"></div>
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row">
+			<div id="VL_PTZSetDiv" class="first">
+				<div class="cfg_row_left" id="VL_PTZSetL">PTZ Activation</div>
+				<div class="cfg_row_right">
+					<button id="VL_PTZSet" class="btn" style="margin-left:0px">Setting</button>
+				</div>
+			</div>
+			<div id="VL_RecordDelayDiv" class="second">
+				<div class="cfg_row_left" id="VLRecordDelayL">Post Record</div>
+				<div class="cfg_row_right">
+					<input id="VLRecordDelay" class="inputTxt timeTxt" 
+					onkeyup="if(keyboardFilter(event)) {NumberRangeMax(this, 300)}"
+					onblur="NumberRangeMin(this,10)" />
+					<label id="VLRecordSec">Sec(10-300)</label>
+				</div>
+			</div>
+		</div> 	
+
+		<div class="cfg_row" id="lo_Alarm_tone">
+			<div class="cfg_row_left" id="lo_alarm_toneL">alarm tone</div>
+			<div class="cfg_row_right" style="width: auto;">
+				<select class="select voiceTypeSelect" id="lo_AbAlarmToneType"></select>
+				<span id="lo_alarmAndCustom">
+					<select class="select customSelect" id="lo_AbAlarmTone"></select>
+					<button id="lo_AbAlarmToneCustomButton" class="btn" style="margin-left:0px;float:none;"></button>
+				</span>
+			</div>
+		</div>
+
+		<div class="check-btn-box group-box" id="AlarmLinkBox" style="margin-top:5px; display:none;">
+			<span id="VL_RecordBox">
+				<input id="VLRecord" type="checkbox"/>
+				<label for="VLRecord" id="VLRecordL">Record</label>
+			</span>
+			<span id="VL_TourBox">
+				<input id="VLTour" type="checkbox"/>
+				<label for="VLTour" id="VLTourL">Tour</label>
+			</span>
+			<span id="VL_SnapBox">
+				<input id="VLSnap" type="checkbox"/>
+				<label for="VLSnap" id="VLSnapL">Snap Channel</label>
+			</span>
+		</div>
+		<div class="check-btn-box" id="VL_enableBox" style="margin-top:15px">
+			<span id="VL_ShowMessageBox" style="display: none;">
+				<input id="VLShowMessage" type="checkbox"/>
+				<label for="VLShowMessage" id="VLshow_message">Show Message</label>
+			</span>
+			<span id="VL_SendEmailBox">
+				<input id="VLSendEmail" type="checkbox"/>
+				<label for="VLSendEmail" id="VLsendEmailL">Send Email</label>				
+			</span>					
+			<span id="VL_PhoneBox">
+				<input id="VLPhone" type="checkbox"/>
+				<label for="VLPhone" id="VLPhoneL">APP Push</label>				
+			</span>
+			<span id="VL_FTPBox">
+				<input id="VLFTP" type="checkbox"/>
+				<label for="VLFTP" id="VLFTPL">FTP</label>				
+			</span>
+			<span id="VL_WriteLogBox">
+				<input id="VLWriteLog" type="checkbox"/>
+				<label for="VLWriteLog" id="VLWriteLogL">Write Log</label>				
+			</span>
+		</div>
+    </div>
+    <div class="cfg_row">
+        <div class="btn_box" id="vl_btn_box">
+			<button id="VLCP" class="btn">Copy</button>
+            <button id="VLPaste" class="btn">Paste</button>
+			<button id="VLDefault" class="btn" style="display: none;">Default</button>
+            <button id="VLRf" class="btn">Refresh</button>
+            <button id="VLSave" class="btn SvBtnState">Save</button>
+        </div>
+    </div>
+    <!-- channel copy -->
+    <div class="copy_box" id="vbCopyTD" style="display:none;">
+        <div class="cfg_row" id="table_cp_d">
+            <div id="vbSelectCopy">Please select the channel you want to copy</div>
+        </div>
+
+        <div class="cfg_row" id="table_cp_ok">
+            <input type="checkbox" id="vbck" class="AllCheck" />
+            <label for="vbck"><font id="vbSelectedAll"> All</font></label>
+
+            <div class="copy_btn" id="vbOk">Copy</div>
+        </div>
+    </div>
+</div>

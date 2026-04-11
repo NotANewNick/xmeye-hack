@@ -1,0 +1,121 @@
+<div class="cfg_container" id="CustomerFlow_page" style="visibility: hidden;">
+	<div class="topContent">
+		<div id="titleText1">查询条件</div>
+		<div class="QueryTitle2">
+			<div id="titleText2">查询结果</div>
+			<div id="FlowTabBtn_Box" style="float:left;">
+				<button class="FlowTabBtn" id="listTab" name="active">List</button>
+				<button class="FlowTabBtn" id="histogramTab" name="">Histogram</button>
+				<button class="FlowTabBtn" id="lineTab" name="">Line Chart</button>
+			</div>
+
+			<div class="ExportFlow_Box" id="ExportFlow_Div">
+				<button class="FlowTabBtn" id="ExportFlowBtn">导出</button>
+			</div>
+		</div>
+	</div>
+	<div class="leftContent">
+		<div class="check-box-row" id="alarmListBox">
+			<div class="FlowItemBox" id="Channel_Div">
+				<div class="FlowItemTitle" id="flow_channel_num">Channel</div>
+				<select class="select" id="FlowChannelSel"></select>
+			</div>
+			<div class="FlowItemBox" id="ReportForm_Div">
+				<div class="FlowItemTitle" id="ReportTypeL">Report Form Type</div>
+				<select class="select" id="ReportTypeSel"></select>
+			</div>
+			<div class="FlowItemBox" id="Count_Div">
+				<div class="FlowItemTitle" id="CountTypeL">Count Type</div>
+				<select class="select" id="CountTypeSel"></select>
+			</div>
+
+			<div class="FlowItemBox">
+				<div class="FlowItemTitle" id="FlowBeginTimeL">开始时间</div>
+				<div class="cfg_row">
+					<div class="inlinebox">
+						<input id="FlowStartDate" readonly="readonly" type="text" style="height:23px; width:178px;" data-date=""/>
+					</div>
+					<div class="inlinebox" style="display: none;">
+						<div id="FlowStartTime" style="height:25px; overflow:hidden;"></div>
+					</div>
+				</div>
+			</div>
+
+			<button class="btn FlowBtn" id="btnCount">Count</button>
+
+			<div class="FlowDelItemBox" id="deleteBox">
+				<div class="cfg_row" id="split_Div">
+					<div style="width:90%; border-bottom: 1px solid gray; display: inline-block;margin:5px auto;">
+					</div>
+				</div>
+				<div class="FlowItemTitle" id="ClearTitleL">Remove Data</div>
+				<div class="cfg_row" id="btnClear_Div">
+					<button class="btn FlowBtn " id="btnClear">Reset Flow count</button>
+				</div>
+				<div class="cfg_row" id="btnResetOSD_Div">
+					<button class="btn FlowBtn" id="btnResetOSD">Reset Flow OSD</button>
+				</div>
+
+				<div id="CFDetectDive" style="display: none">
+					<div class="FlowItemTitle" id="CustomerFlowEnableSwitchL" style="margin-top: 20px">Enable Switch</div>
+					<span class="cfg_row" id="CFEnableSwitch_Div" style="margin-top: 5px; margin-bottom: 0px">
+						<input id="CFEnableSwitch" type="checkbox"/>
+						<label for="CFEnableSwitch" id="CFEnableSwitchL">Customer Flow Enable Switch</label>	
+					</span>
+					<span class="cfg_row" id="CFIsOutside_Div">
+						<input id="CFIsOutside" type="checkbox"/>
+						<label for="CFIsOutside" id="CFIsOutsideL">Is Outside</label>	
+					</span>
+
+					<div calss="btn_box">
+						<button class="btn" id="CF_Refresh" style="margin-left: 0px">Refresh</button>
+						<button class="btn" id="CF_Save">Save</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="FlowTimer1" style="width: 285px; height: 0px; overflow: hidden;"></div>
+		<iframe id="Flowframe1" style="width: 0px; height: 0px; border: 0px; overflow: hidden;position: absolute"></iframe>
+	</div>
+    <div class="FlowContent" id="ContentBox">
+		<div class="FlowCenter" id="FlowDisplay">
+			<div id="listPage">
+				<div id="FlowList">
+					<div class="table-responsive">
+						<div class="table-head">
+							<table class="table grid" style="margin-bottom:0">
+								<colgroup>
+									<col style="width:50%">
+									<col style="width:50%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th id="Date_Time">Time</th>
+										<th id="Date_Count">Count</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div class="table-content">
+							<table id="FlowTable" class="table grid">
+								<colgroup>
+									<col style="width:50%">
+									<col style="width:50%">
+								</colgroup>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="graphPage" style="display: none;">
+				<div id="graph_Rect" style="width:90%">
+					<canvas id="graph_cvs"></canvas>
+				</div>
+			</div>
+		</div>
+    </div>
+</div> 

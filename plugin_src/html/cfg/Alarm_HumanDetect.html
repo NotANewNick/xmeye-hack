@@ -1,0 +1,199 @@
+<div class="cfg_container alarm">
+	<div class="cfg_row" id="PDChannelDiv">
+		<div class="cfg_row_left" id="PD_ChannelNum">Channel</div>
+		<div class="cfg_row_right">
+			<select class="select" id="PDChannelMask"></select>
+		</div>
+	</div>
+	<div class="cfg_row" >
+		<div id="PD_ChnSwitch_DIV" class="first">
+			<div class="cfg_row_left" id="PDChnSwitch">Enable</div>
+			<div class="cfg_row_right">
+				<input type="button" class="selectDisable" id="PD_ChnSwitch" data=''/>
+			</div>
+		</div>
+		<div id="PD_Content_div" class="second" style="display: none;">
+			<div class="cfg_row_left">
+				<font id="PDSensitive">Sensitive</font>
+			</div>
+			<div class="cfg_row_right">
+				<select id="PD_Sensitive" class="select">						
+				</select>
+			</div>
+		</div>
+	</div>
+	
+	<div id="DivBoxAll">
+		<div class="cfg_row">
+			<div id="PDLightsDiv" class="first">
+				<div class="cfg_row_left" id="PDLightsL">Alarm Lights</div>
+				<div class="cfg_row_right">
+					<input type="button" class="selectDisable" id="PDLights" data=''/>
+				</div>
+			</div>
+			<div id="PDLoiterDiv" class="second">
+				<div class="cfg_row_left" id="PDLoiterL">Wandering Time</div>
+				<div class="cfg_row_right">
+					<input id="PDLoiter" class="inputTxt timeTxt" maxlength="2"
+					onkeyup="if(keyboardFilter(event)) {NumberRange(this, 1, 50, -1)}"
+					onblur="NumberRange(this, 1, 50, -1)" />
+					<label id="LoiterSec">Sec(1-50)</label>
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row">
+			<div class="split"></div>
+		</div>
+		<div class="cfg_row">
+			<div id="PD_PeriodDiv" class="first">
+				<div class="cfg_row_left" id="PD_PeriodL">Period</div>
+				<div class="cfg_row_right">
+					<button id="PD_Period" class="btn" style="margin-left:0px;">Setting</button>
+				</div>
+			</div>
+			<div id="PD_EventLatchDiv" class="second">
+				<div class="cfg_row_left" id="PDEventLatchL">Interval</div>
+				<div class="cfg_row_right">
+					<input id="PDEventLatch" class="inputTxt timeTxt" maxlength="3"
+					onkeyup="if(keyboardFilter(event)) {NumberRange(this, 0, 600, -1)}"
+					onblur="NumberRange(this, 0, 600, -1)" />
+					<label id="PDLatchSec">Sec(0-600)</label>
+				</div>
+			</div>
+		</div>	
+
+		<div id="PD_AOEvent" class="cfg_row" style="position:relative;">
+			<div class="MaskDiv"></div>
+			<div class="first">
+				<div class="cfg_row_left" id="PDAOL">Alarm Output</div>
+				<div class="cfg_row_right rightEx" id="PD_AOChannelDiv">
+					
+				</div>
+			</div>
+			<div id="PD_AODelayDiv" class="second">
+				<div class="cfg_row_left" id="PDAODelayL">Delay</div>
+				<div class="cfg_row_right">
+					<input id="PDAODelay" class="inputTxt timeTxt" 
+					onkeyup="if(keyboardFilter(event)) {NumberRangeMax(this, 300)}"
+					onblur="NumberRange(this, 10, 300, -1)" />
+					<label id="PDAOSec">Sec(10-300)</label>
+				</div>
+			</div>
+		</div>
+		<div id="MulityAlarmLinkBox">
+			<div id="PD_DivBoxRecord" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="PD_RecordCH">
+					<div class="cfg_row_left" id="PDrecord_channel">Record channel</div>
+					<div class="cfg_row_right rightEx" id="PD_RecChannelDiv"></div>
+				</div>
+			</div>
+
+			<div id="PD_DivBoxTour" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="PD_TourCH">
+					<div class="cfg_row_left" id="PDtour_channel">Tour</div>
+					<div class="cfg_row_right rightEx" id="PD_TourChannelDiv"></div>
+				</div>
+			</div>		
+			
+			<div id="PD_DivBoxSnap" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="PD_SnapCH">
+					<div class="cfg_row_left" id="PDsnap_channel">Snap Channel</div>
+					<div class="cfg_row_right rightEx" id="PD_SnapChannelDiv"></div>
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row">
+			<div id="PD_PTZSetDiv" class="first">
+				<div class="cfg_row_left" id="PD_PTZSetL">PTZ Activation</div>
+				<div class="cfg_row_right">
+					<button id="PD_PTZSet" class="btn" style="margin-left:0px">Setting</button>
+				</div>
+			</div>
+			
+			<div id="PD_RecordDelayDiv" class="second">
+				<div class="cfg_row_left" id="PDRecordDelayL">Post Record</div>
+				<div class="cfg_row_right">
+					<input id="PDRecordDelay" class="inputTxt timeTxt" 
+					onkeyup="if(keyboardFilter(event)) {NumberRangeMax(this, 300)}"
+					onblur="NumberRange(this,10,300,-1)" />
+					<label id="PDRecordSec">Sec(10-300)</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="cfg_row" id="hu_Alarm_tone">
+			<div class="cfg_row_left" id="hu_alarm_toneL">alarm tone</div>
+			<div class="cfg_row_right" style="width: auto;">
+				<select class="select voiceTypeSelect" id="hu_AbAlarmToneType"></select>
+				<span id="hu_alarmAndCustom">
+					<select class="select customSelect" id="hu_AbAlarmTone"></select>
+					<button id="hu_AbAlarmToneCustomButton" class="btn" style="margin-left:0px;float:none;"></button>
+				</span>
+			</div>
+		</div>
+		<div class="check-btn-box group-box" id="AlarmLinkBox" style="margin-top:5px; display:none;">
+			<span id="PD_RecordBox">
+				<input id="PDRecord" type="checkbox"/>
+				<label for="PDRecord" id="PDRecordL">Record</label>
+			</span>
+			<span id="PD_TourBox">
+				<input id="PDTour" type="checkbox"/>
+				<label for="PDTour" id="PDTourL">Tour</label>
+			</span>
+			<span id="PD_SnapBox">
+				<input id="PDSnap" type="checkbox"/>
+				<label for="PDSnap" id="PDSnapL">Snap Channel</label>
+			</span>
+		</div>
+		<div class="check-btn-box" id="PD_enableBox" style="margin-top:15px">
+			<span id="PD_ShowMessageBox" style="display: none;">
+				<input id="PDShowMessage" type="checkbox"/>
+				<label for="PDShowMessage" id="PDshow_message">Show Message</label>
+			</span>
+			<span id="PD_SendEmailBox">
+				<input id="PDSendEmail" type="checkbox"/>
+				<label for="PDSendEmail" id="PDsendEmailL">Send Email</label>				
+			</span>			
+			<span id="PD_PhoneBox">
+				<input id="PDPhone" type="checkbox"/>
+				<label for="PDPhone" id="PDPhoneL">APP Push</label>				
+			</span>
+			<span id="PD_FTPBox">
+				<input id="PDFTP" type="checkbox"/>
+				<label for="PDFTP" id="PDFTPL">FTP</label>				
+			</span>
+			<span id="PD_WriteLogBox">
+				<input id="PDWriteLog" type="checkbox"/>
+				<label for="PDWriteLog" id="PDWriteLogL">Write Log</label>				
+			</span>
+			<span id="PD_VoiceBox">
+				<input id="PDVoice" type="checkbox"/>
+				<label for="PDVoice" id="PDVoiceL">Alarm Sound
+				</label>				
+			</span>
+		</div>
+	</div>
+
+	<div class="cfg_row">
+		<div class="btn_box" style="margin-left:115px">
+			<button id="PD_COPY" class="btn">Copy</button>
+			<button id="PD_Paste" class="btn">Paste</button>
+			<button id="PD_Default" class="btn" style="display: none;">Default</button>
+			<button id="PD_Rf" class="btn">Refresh</button>
+			<button id="PD_SV" class="btn SvBtnState">Save</button>
+		</div>
+	</div>
+	<div class="copy_box" id="PDCopyTD" style="display:none;">
+		<div class="cfg_row" id="PD_table_cp_d">
+			<div id="PDSelectCopy">Please select the channel you want to copy</div>
+		</div>
+		<div class="cfg_row" id="PD_table_cp_ok">
+			<input type="checkbox" id="PDck" class="AllCheck" />
+			<label for="PDck"><font id="PDSelectedAll"> All</font></label>
+			<div class="copy_btn" id="PDOk">Copy</div>
+		</div>
+	</div>
+</div>

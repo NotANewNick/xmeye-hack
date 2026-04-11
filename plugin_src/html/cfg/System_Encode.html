@@ -1,0 +1,143 @@
+<div class="cfg_container encode" id="EncodePage">
+    <div class="cfg_row">
+		<div class="cfg_row_left"></div>
+		<div class="cfg_row_right">
+			<div id="MainStream" class="title"></div>
+			<div id="SubStream" class="title sub"></div>
+		</div>
+	</div>
+    
+    <div class="cfg_row" id="chn_div">
+        <div class="cfg_row_left" id="cbm_channel_num">Channel</div>
+        <div class="cfg_row_right">
+            <select class="select" id="CHNBMchn"></select>
+        </div>
+    </div>
+    <div id="MainDivBoxAll">
+		<div class="cfg_row" id="codetype_div">
+            <div class="cfg_row_left" id="codetypeL">Compression</div>
+            <div class="cfg_row_right">
+                <select id="MainCodeFormat" class="select"></select>
+				<select id="ExtCodeFormat" class="select sub" style="display:none"></select>
+            </div>
+        </div>
+        <div class="cfg_row">
+            <div class="cfg_row_left" id="f_b_l">Resolution</div>
+            <div class="cfg_row_right">
+                <select class="select" id="MainResol"></select>
+				<select class="select sub" id="ExtResol"></select>
+            </div>
+        </div>
+      
+		<div class="cfg_row" id="fps_row">
+            <div class="cfg_row_left" id="frame_ratio">Frame Rate(fps)</div>
+            <div class="cfg_row_right">
+                <select class="select" id="MainFPS"></select>
+				<select class="select sub" id="ExtFPS"></select>
+            </div>
+        </div>
+        <div class="cfg_row" id="bit_ctrl">
+            <div class="cfg_row_left" id="bitrate_ctrl">Bit Rate Type</div>
+            <div class="cfg_row_right">
+                <select class="select" id="MainBitCtrl"></select>
+				<select class="select sub" id="ExtBitCtrl"></select>
+            </div>
+        </div>
+		<div class="cfg_row" id="quality">
+			<div class="cfg_row_left" id="QualityL">Quality</div>
+			<div class="cfg_row_right">
+				<select class="select" id="Mainquality">
+				</select>
+				<select id="Extquality" class="select sub">  
+                </select>
+			</div>
+		</div>
+        <div class="cfg_row" id="BitRate">
+            <div class="cfg_row_left" id="BitRateL">Bit Rate(kbps)</div>
+            <div class="cfg_row_right" id="NVR_Stream">
+				<select class="select" id="MainBitRate"></select>
+				<select class="select sub" id="ExtBitRate"></select>
+            </div>
+        </div>
+		<div class="cfg_row" id="GOPDiv">
+            <div class="cfg_row_left" id="GOPL">I Frame Interval</div>
+            <div class="cfg_row_right" id="GOP">
+				<select class="select" id="MainGop"></select>
+				<select class="select sub" id="ExtGop"></select>
+            </div>
+        </div>
+		
+        <div class="cfg_row" id="NVR_BMAudio">
+            <div class="cfg_row_left" id="VAL">Video/Audio</div>
+            <div class="cfg_row_right">
+				<div id="AudioGroupM" style="float:left; width:140px">
+					<span id="MainVideoDiv">
+						<input id="MainVideo" type="checkbox"/><label for="MainVideo">&nbsp;&nbsp;</label>
+					</span>
+					<span id="MainAudioDiv">
+						<input id="MainAudio" type="checkbox"/><label for="MainAudio">&nbsp;&nbsp;</label>
+					</span>
+				</div>
+				<div id="AudioGroupS" style="float:left; margin-left:88px;">
+					<span id="SubVideoDiv">
+						<input id="ExtVideo" type="checkbox"/><label for="ExtVideo">&nbsp;&nbsp;</label>
+					</span>
+					<span id="SubAudioDiv">
+						<input id="ExtAudio" type="checkbox"/><label for="ExtAudio">&nbsp;&nbsp;</label>
+					</span>
+				</div>
+            </div>
+        </div>
+	</div>
+	<div class="cfg_row" id="StaticEncodeDiv" style="display: none">
+		<div class="cfg_row_left" id="StaticEncodeL">Static configuration of the encoder</div>
+		<div class="cfg_row_right">
+			<select class="select" id="StaticEncode"></select>
+		</div>
+	</div>
+	<div class="cfg_row" id="SmartDiv">
+		<div class="cfg_row_left" id="SmartL">Smart Encode</div>
+		<div class="cfg_row_right" id="Smart">
+			<select class="select" id="SmartM"></select>
+			<select class="select sub" id="SmartExt"></select>
+		</div>
+	</div>
+	<div class="cfg_row" id="AudioModeDiv" style="display: none">
+		<div class="cfg_row_left" id="AudioModeL">Audio mode</div>
+		<div class="cfg_row_right">
+			<select class="select" id="AudioMode"></select>
+		</div>
+	</div>
+
+    <div class="cfg_row" id="RemotePreviewDiv" style="display: none">
+		<div class="cfg_row_left" id="RemotePreviewL">Remote Preview</div>
+		<div class="cfg_row_right">
+			<button id="RemotePreview" class="btn" style="margin-left:0px;">Setting</button>
+		</div>
+	</div>
+    
+    <div class="cfg_row">
+        <div class="btn_box" id="main_btn_box">
+			<button id="EncodeCP" class="btn">Copy</button>
+			<button id="EncodePaste" class="btn">Paste</button>
+			<button id="EncodeDefault" class="btn" style="display: none;">Default</button>
+            <button id="EncodeRF" class="btn">Refresh</button>
+            <button id="EncodeSV" class="btn SvBtnState">Save</button>
+        </div>
+    </div>
+    <div class="copy_box" id="NVR_bmCopyTD" style="display:none;">
+        <div class="cfg_row">
+            <div class="copy_title" id="NVR_main_selectID">Please select the channel you want to copy</div>
+        </div>
+        <div class="cfg_row">
+            <div class="table_box syspm_use_backup_L">
+                <input type="checkbox" id="NVR_bmck"  class="AllCheck" style="margin-left:3px;"/>
+                <label for="NVR_bmck"><font id="NVR_bm_selectedAll"> All</font></label>
+                <div class="copy_btn" id="NVR_bmOk">OK</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

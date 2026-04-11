@@ -1,0 +1,82 @@
+<div class="cfg_container">
+    <div class="cfg_row">
+        <div class="cfg_row_left" id="ab_type">Event Type</div>
+        <div class="cfg_row_right">
+            <select class="select" id="AbnormalType">
+            </select>
+        </div>
+    </div>
+	<div id="alarmEventConnent">
+		<div class="cfg_row">
+			<div class="cfg_row_left" id="ay_start_ab_warn">Enable</div>
+			<div class="cfg_row_right mv_R">
+				<input type="button" class="selectDisable" id="ABEnable" data=''/>
+			</div>
+		</div>
+		<div id="ABDivBoxEnable">
+			<div class="cfg_row" id="EX_Alarm_tone">
+				<div class="cfg_row_left" id="EX_alarm_toneL">alarm tone</div>
+				<div class="cfg_row_right" style="width: auto;">
+					<select class="select voiceTypeSelect" id="EX_AbAlarmToneType" style="width: 140px;"></select>
+					<span id="EX_alarmAndCustom">
+						<select class="select customSelect" id="EX_AbAlarmTone"></select>
+						<button id="EX_AbAlarmToneCustomButton" class="btn" style="margin-left:0px;float:none;"></button> 
+					</span>
+				</div>
+			</div>
+			<div class="cfg_row" id="Limit_box" style="display:none">
+				<div class="cfg_row_left" id="Limit">Less Than</div>
+				<div class="cfg_row_right">
+					<input class="inputTxt" id="LimitPercent" type="text" maxlength="3" 
+					onkeyup="if(keyboardFilter(event)) {NumberRangeMaxEx(this, 99);}"
+					onblur="NumberRange(this, 0, 99, -1);"/> %
+				</div>
+			</div>
+			<div class="cfg_row alarm">
+				<div class="split"></div>
+			</div>
+			<div class="check-btn-box" id="CheckDiskInterval_Box">				
+				<span>
+					<input id="CheckDiskIntervalSwitch" type="checkbox"/>
+					<label for="CheckDiskIntervalSwitch"  id="label_for_CheckDiskInterval_Switch" style="margin-top:0px;margin-right:10px;">Check Disk Interval</label>
+					<input class="inputTxt timeTxt" id="CheckDiskIntervalInputTxt" type="text"  maxlength='5'
+					style="margin-top:0px;"
+					onkeyup="if(keyboardFilter(event)) {NumberRangeMaxEx(this, 60000)}"
+					onblur="if(this.value == '') this.value='0'"/>
+					<label id="CheckDiskIntervalSec">Sec</label>
+				</span>
+			</div>
+			<div class="check-btn-box" id="screen_box">
+				<span>			
+					<input id="ABShowMessage" type="checkbox"/>
+					<label for="ABShowMessage"  id="ay_show_message">show message</label>
+				</span>
+			</div>
+			<div class="check-btn-box" id="yc_push_switch_box" style="display:none;">
+				<span>			
+					<input id="ABPushSwitch" type="checkbox"/>
+					<label for="ABPushSwitch"  id="ay_start_Push_Switch">Push</label>
+				</span>
+			</div>
+			<div class="check-btn-box" id="sendEmail_box" style="display:none;">
+				<span>			
+					<input id="ABSendEmail" type="checkbox"/>
+					<label for="ABSendEmail"  id="ay_start_sendEmail">sendEmail</label>
+				</span>
+			</div>
+			<div class="check-btn-box" id="Reboot_box" style="display:none;">
+				<span>			
+					<input id="AutoReboot" type="checkbox"/>
+					<label for="AutoReboot"  id="autoReboot">Auto Reboot</label>
+				</span>
+			</div>
+
+		</div>
+		<div class="cfg_row">
+			<div class="btn_box" style="position: relative;">
+				<button class="btn" id="ABRf">Refresh</button>
+				<button class="btn SvBtnState" id="ABSave">Save</button>
+			</div>
+		</div>
+	</div>
+</div>

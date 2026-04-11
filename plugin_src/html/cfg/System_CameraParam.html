@@ -1,0 +1,296 @@
+<!--<div class="cfg_container">-->
+<div class="cfg_container camera" id="CameraParam_page">
+    <!--On 1-->
+    <div class="cfg_row" id="CAM_CHN_TABLE" style="display:none;">
+        <div class="cfg_row_left" id="cam_channel_num">Channel</div>
+        <div class="cfg_row_right">
+            <select id="ChncamChannelMask" class="select">
+            </select>
+        </div>
+    </div>
+	<!--On 2-->
+	<div id="CameraParamSet_Box">
+		<div class="cfg_row">
+			<div class="first">
+				<div class="cfg_row_left" id="exposure">Exposure Mode</div>
+				<div class="cfg_row_right" style="width:auto">
+						<select id="Exposure_Mode" class="select"></select>
+				</div>
+			</div>
+			<div id="exposure_autoDiv" class="second" style="display:none;">
+				<label id="label_min">Minimum Time</label>
+				<input id="min_time_id" class="inputTxt" style="width:85px" maxlength="6" />
+				<label id="label_sp">--</label>
+				<label id="label_max">Maximum Time</label>
+				<input id="max_time_id" class="inputTxt" style="width:85px" maxlength="6"/>
+			</div>
+		</div>
+		<!--On 3-->
+		<div class="cfg_row" id="DNModeDiv">
+			<div class="first">
+				<div class="cfg_row_left" id="Cam_DNMode_L">Day/Night Mode</div>
+				<div class="cfg_row_right" style="width:auto">			
+					<select id="Cam_DNMode" class="select"></select>
+				</div>
+			</div>
+			<div class="second" id="GearCtrlBox" style="display: none">
+				<div class="cfg_row_left" id="GearCtrl">Gear Control</div>
+				<div class="cfg_row_right" id="GearSlider" style="position: relative;">
+					<div class="MaskDiv" style="height: 100%;"></div>
+					<div id="RDNC"></div>
+					<div id="Auto_Adjustment" style="display: none;"></div>
+				</div>
+			</div>
+			<div class="second" id="DayNightSwitch" style="display: none">
+				<div class="cfg_row_left" id="DayNightSwitchL">DayNight Switch</div>
+				<div class="cfg_row_right">
+					<select id="DayNightSwtichSelect" class="select"></select>
+				</div>
+			</div>		
+		</div>
+		
+		<div class="cfg_row" id="White_balance">
+			<div class = "first">
+				<div class="cfg_row_left" id="WhiteBalance">White Balance</div>
+				<div class="cfg_row_right">
+					<select id="Cam_WBMode" class="select"></select>
+				</div>
+			</div>
+			<div class="second" id="GearCtrlBox2" style="display: none;">
+				<div class="cfg_row_left" id="GearCtrl2">Gear Control</div>
+				<div class="cfg_row_right" id="GearSlider2" style="position: relative;">
+					<div class="MaskDiv" style="height: 100%;"></div>
+					<div id="RDNC2"></div>
+					<div id="Auto_Adjustment2" style="display: none;"></div>
+				</div>
+			</div>
+			<div class="second" id="DayTimeSectionBox" style="display: none;">
+				<div class="cfg_row_left" id="DayTimeSectionL">Day Time Section</div>
+				<div class="cfg_row_right" id="DayTimeSection">
+					<div id="TimeSection" class="time-div">
+						<input id="BH" type="text" maxlength="2" /><label class='timeSplit'>:</label>
+						<input id="BM" type="text" maxlength="2" /><label class='timeSpace'>-</label>
+						<input id="EH" type="text" maxlength="2" /><label class='timeSplit'>:</label>
+						<input id="EM" type="text" maxlength="2" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="cfg_row" id="WhiteLightUpTimeSectionBox" style="display: none">
+			<div class="first">
+				<div class="cfg_row_left" id="LightUpTimeSecsionL">Light Up Time</div>
+				<div class="cfg_row_right" id="WhiteLightUpTimeSection" style="margin-left: -33px">
+					<span class="timespan">				
+                        <input id="LightUp_TimeEnable" type="checkbox" />
+                        <label for="LightUp_TimeEnable">&nbsp</label>
+                    </span>
+					<div id="LightUpTimeSection" class="time-div">
+						<input id="LU_BH" type="text" maxlength="2" /><label class='timeSplit'>:</label>
+						<input id="LU_BM" type="text" maxlength="2" /><label class='timeSpace'>-</label>
+						<input id="LU_EH" type="text" maxlength="2" /><label class='timeSplit'>:</label>
+						<input id="LU_EM" type="text" maxlength="2" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--Auto Iris-->
+		<div class="cfg_row" id="Iris_Div">
+			<div class="first" id="Image_Style">
+				<div class="cfg_row_left" id="ImageStyle">Image Style</div>
+				<div class="cfg_row_right">
+					<select id="Cam_Image_Style" class="select"></select>
+				</div>
+			</div>
+			<div class="second">
+				<div class="cfg_row_left" id="Cam_IrisL">Auto Iris</div>
+				<div class="cfg_row_right" style="width:auto">
+					<select id="Cam_Iris" class="select"></select>
+				</div>
+			</div>
+		</div>
+		
+		<!--AE Reference-->
+		<div class="cfg_row">
+			<div class="first">
+				<div class="cfg_row_left" id="Cam_AE_L">AE Reference</div>
+				<div class="cfg_row_right" style="width:auto;">
+					<input class="inputTxt" id="Cam_AE" type="text" maxlength="3" 
+					onkeyup="if(keyboardFilter(event)) {NumberRange(this,0,100,-1);}"
+					onblur="NumberRange(this,0,100,-1);" />
+				</div>
+				<!--label style="width:auto; height:30px; margin-left:5px;" id = "AE_DefaultL">Default</label>
+				<label style="width:auto; height:30px; margin-left:5px;" id="Cam_AE_Default"></label-->
+			</div>
+			<div class="second">
+				<div class="cfg_row_left" id="AE_DefaultL">Default</div>
+				<div class="cfg_row_right">
+					<label style="width:auto; height:30px;" id="Cam_AE_Default"></label>
+				</div>
+			</div>
+			
+		</div>
+		
+		<!--BLC-->
+		<div class="cfg_row" id="BLC_Div">
+			<div class="first">
+				<div class="cfg_row_left" id="Cam_BLC_R">BLC</div>
+				<div class="cfg_row_right" style="width: auto;">
+					<select id="Cam_BLC" class="select"></select>
+				</div>
+			</div>
+			<!--AE Sensitivity-->
+			<div class="second">
+				<div class="cfg_row_left" id="Cam_Sen_L">AE Sensitivity</div>
+				<div class="cfg_row_right" style="width: auto; position: relative;">
+					<div class="MaskDiv" style="height: 100%;"></div>
+					<div id="Cam_Sen_R">
+						<div id="Cam_Sen"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="cfg_row" id="Auto_Gain_Div">
+			<div class="first">
+				<div class="cfg_row_left" id="Auto_Gain">AGC</div>
+				<div class="cfg_row_right">
+					<select id="Cam_GainMode" class="select" style="float:left"></select>	
+				</div>
+			</div>
+			<div  class="second" id="Gainwide" >
+				<div class="cfg_row_left" id="Gain_value" >Level</div>
+				<div class="cfg_row_right">
+					<input id="Cam_GainStrength" class="inputTxt" maxlength="3" 
+					onkeyup="if(keyboardFilter(event)) {NumberRange(this,0,100,-1);}"
+					onblur="NumberRange(this,0,100,-1);" />
+				</div>
+			</div>
+		</div>
+	
+		<div class="cfg_row" id="Slow_shutter">
+			<div class="first">
+				<div class="cfg_row_left" id="Slow_shutterL">Slow Shutter</div>
+				<div class="cfg_row_right" style="width: auto;">
+					<select id="Cam_Slow_shutter" class="select"></select> 
+				</div>
+			</div>
+			<div class="second" id="IR_CUT">
+				<div class="cfg_row_left" id="IR_CUTL">IR_CUT</div>
+				<div class="cfg_row_right">
+					<select id="IR_CUTR" class="select"></select>
+				</div>
+			</div>
+		</div>
+		
+		<div class="cfg_row">
+			<div class="first">
+				<div class="cfg_row_left" id="Day_Noise_Level">DayNTLevel</div>
+				<div class="cfg_row_right" style="width: auto;">
+					<select class="select" id="day_dn_id"></select>
+				</div>
+			</div>
+			<div class="second">
+				<div class="cfg_row_left" id="Night_Noise_Level">NightNTLevel</div>
+				<div class="cfg_row_right">
+					<select class="select" id="night_dn_id"></select>
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row" id="BT_Div">
+			<div class="first">
+				<div class="cfg_row_left" id="Digital_dynamic" >DWDR</div>
+				<div class="cfg_row_right">
+					<select id="Cam_DwdrMode" class="select" style="float:left"></select>		
+				</div>
+			</div>
+			<div id="digital_wide" class="second">
+				<div class="cfg_row_left" id="wide_value">Limit</div>
+				<div class="cfg_row_right">
+					<input id="Cam_DwdrStrength" class="inputTxt" maxlength="3" 
+					onkeyup="if(keyboardFilter(event)) {NumberRange(this,0,100,-1);}"
+					onblur="NumberRange(this,0,100,-1);" />
+				</div>
+			</div>	
+		</div>
+		<div class="cfg_row" id="Defog_Mode_Div" style="position: relative;">
+			<div class="first">
+				<div class="cfg_row_left" id="Defog_Mode">Defogging</div>
+				<div class="cfg_row_right">
+					<select id="Cam_DefogMode" class="select" style="float:left"></select>
+				</div>
+			</div>
+			<div id="Defog_level" class="second">
+				<div class="cfg_row_left" id="level_value">Rating</div>
+				<div class="cfg_row_right">
+					<input id="Cam_DefogThreshTarget" class="inputTxt" maxlength="3" 
+					onkeyup="if(keyboardFilter(event)) {NumberRange(this,0,100,-1);}"
+					onblur="NumberRange(this,0,100,-1);" />
+				</div>
+			</div>
+			
+		</div>
+		
+		<div class="cfg_row" id="Debug_Div">
+			<div class="cfg_row_left" id="DebugInfo">Front-end command</div>
+			<div class="cfg_row_right" style="width: auto;">
+				<div class="inlinebox">
+					<input id="DebugInput" class="inputTxt" />
+				</div>
+				<div class="inlinebox">
+					<button id="SendBtn" class="btn">Send</button>
+				</div>
+				<div class="inlinebox">
+					<button id="SaveBtn" class="btn">Save</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="cfg_row" id="Corridor_Mode">
+			<div class="cfg_row_left" id="CorridorModeL">Corridor Mode</div>
+			<div class="cfg_row_right">
+				<select id="CorridorMode" class="select">
+				</select>
+			</div>
+		</div>
+
+		<div class="check-btn-box">
+			<span id="MirrorSpan">
+				<input id="MirrorSwitch" type="checkbox"/>
+				<label for="MirrorSwitch" id="MirrorMode">Mirror</label>
+			</span>
+			<span id="FlipSpan">
+				<input id="FlipSwitch" type="checkbox"/>
+				<label for="FlipSwitch" id="FlipMode">Flip</label>
+			</span>
+			
+			<span id="AntiSpan">
+				<input id="AntiSwitch" type="checkbox"/>
+				<label for="AntiSwitch" id="AntiMode">Anti Flicker</label>
+			</span>
+			
+			<span id="IrSwapSpan">		
+				<input id="IrSwapSwitch" type="checkbox"/>
+				<label for="IrSwapSwitch" id="IrSwapMode">IR Swap</label>
+			</span>
+			
+			<span id="PreOverExposureSpan">
+				<input id="PreOverExposureSwitch" type="checkbox"/>
+				<label for="PreOverExposureSwitch" id="PreOverExposureMode">No Red Face Exposure</label>
+			</span>
+			
+			<span id="SpecialNightSpan" style="display: none;">
+				<input id="SpecialNightSwitch" type="checkbox"/>
+				<label for="SpecialNightSwitch" id="SpecialNight">SpecialNight</label>
+			</span>
+
+		</div>
+	</div>
+    <div class="cfg_row">
+        <div class="btn_box" id="img_Btn_box">
+            <button id="ChncamRf" class="btn">Refresh</button>
+            <button id="ChncamSV" class="btn SvBtnState">Save</button>
+        </div>
+    </div>
+</div>

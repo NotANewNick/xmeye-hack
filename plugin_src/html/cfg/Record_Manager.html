@@ -1,0 +1,198 @@
+<div class="cfg_container alarm" id="RecordPzPage">
+    <div class="cfg_row">
+		<div class="first"  id="REC_CHN_TABLE">	
+			<div class="cfg_row_left" id="rec_channel_num">channel</div>
+			<div class="cfg_row_right">
+				<select class="select" id="RECConfigChid"></select>
+			</div>
+		</div>
+		
+		<div class="second" id="Enable_div">
+			<div id="Redundancy_div">
+				<label id="RedundancyL" style="float:left;">Redundancy</label>
+				<span id="RedundancySpan" style="margin: 6px 0 0 10px">
+					<input type="checkbox" id="Redundancy"/><label for="Redundancy">&nbsp;</label>
+				</span>
+			</div>
+			
+			<div id="SD_div" style="float:left; margin-left: 15px">
+				<label id="SDL" style="float:left;">SD Card Record</label>
+				<span id="SDSpan" style="margin: 6px 0 0 10px">
+					<input type="checkbox" id="SD"/><label for="SD">&nbsp;</label>
+				</span>
+			</div>
+			
+			<div id="USB_div" style="float:left; margin-left: 15px">
+				<label id="USBL" style="float:left;">USB Record</label>
+				<span id="USBSpan" style="margin: 6px 0 0 10px">
+					<input type="checkbox" id="USB"/><label for="USB">&nbsp;</label>
+				</span>
+			</div>
+		</div>
+    </div>
+	
+	<div class="cfg_row">
+		<div class="first" id="PacketLength_div">
+			<div class="cfg_row_left" id="PacketLengthL">Length</div>
+			<div class="cfg_row_right">
+				<input class="inputTxt" id="PacketLength" maxlength="3"				
+				onkeyup="if(keyboardFilter(event)) NumberRange(this, 1, 120, -1)" 
+				onblur="NumberRange(this, 1, 120, -1)"/>
+				<label id="PacketLengthMin">Min</label>
+			</div>
+		</div>
+		<div class="second" id="PreRecord_div">
+			<div class="cfg_row_left" id="PreRecordL">Length</div>
+			<div class="cfg_row_right">
+				<input class="inputTxt timeTxt" id="PreRecord" maxlength="2"
+				onblur="if(this.value == '') this.value='0'"/>
+				<label id="PreRecordSec">Sec</label>
+			</div>
+		</div>
+	</div>
+	
+	<div class="cfg_row" id="RecordModeBox">
+		<div class="cfg_row_left" id="RecordModeL">record</div>
+		<div class="radio-btn-box cfg_row_right" id="RecordMode_Div">
+			<span id="AutoDiv">
+				<input type="radio" name="a" id="AutoMode" value="ConfigRecord"/>
+				<label for="AutoMode" id="AutoL">Timming</label>
+			</span>
+			<span id="ManualDiv">
+				<input type="radio" name="a" id="ManualMode" value="ManualRecord"/>
+				<label for="ManualMode" id="ManualL">Manual</label>
+			</span>
+			<span id="ClosedDiv">
+				<input type="radio" name="a" id="ClosedMode" value="ClosedRecord"/>
+				<label for="ClosedMode" id="ClosedL">Stop</label>
+			</span>
+		</div>
+	</div>
+	
+	<div class="cfg_row" id="NoHandle_RecordModeBox" style="display: none;">
+		<div class="cfg_row_left" id="NoHandle_RecordModeL">record</div>
+		<div class="radio-btn-box cfg_row_right" id="NoHandleRecordMode_Div">
+			<span id="NormalDiv">
+				<input type="radio" name="d" data="0" id="NormalMode" value="ConfigRecord"/>
+				<label for="NormalMode" id="NormalL">Normal</label>
+			</span>
+			<span id="ManualDiv">
+				<input type="radio" name="e" data="0" id="AlarmMode" value="ConfigRecord"/>
+				<label for="AlarmMode" id="AlarmL">Manual</label>
+			</span>
+			<span id="ClosedDiv2">
+				<input type="radio" name="f" data="0" id="ClosedMode2" value="ClosedRecord"/>
+				<label for="ClosedMode2" id="ClosedL2">Stop</label>
+			</span>
+		</div>
+	</div>
+	
+	<div class="cfg_row" id="Week_TABLE">
+		<div class="cfg_row_left" id="RECWeekL">Week</div>
+		<div class="cfg_row_right">
+			<select class="select" id="RECWeekChid" style="float: left;"></select>
+			<div class="recmask" id="RecordModeTip">
+				<div class="rectip" id="NormalTip">Regular</div>
+				<div class="rectip" id="MotionTip">Detect</div>
+				<div class="rectip" id="AlarmTip">Alarm</div>	
+			</div>
+		</div>
+    </div>
+	
+	<div id="RecTimeSectBox">
+		<div class="cfg_row" id="Sect1">		
+			<div class="cfg_row_left" id="Sect1L">Period 1</div>
+			<div class="cfg_row_right">
+				<div id="secttime1" class="recsect">
+					<input id="StartHour1" class="inputTxt rectime" /><label class='timeSplit'>:</label>
+					<input id="StartMinute1" class="inputTxt rectime" /><label class='timeSpace'>-</label>
+					<input id="EndHour1" class="inputTxt rectime"  /><label class='timeSplit'>:</label>
+					<input id="EndMinute1" class="inputTxt rectime" />
+				</div>
+				
+				<div id="RecMask1" class="recmask">
+					<span><input id="Normal1" type="checkbox"/><label for="Normal1">&nbsp;</label></span>
+					<span><input id="Motion1" type="checkbox"/><label for="Motion1">&nbsp;</label></span>			
+					<span id="Alarm1Span"><input id="Alarm1" type="checkbox"/><label for="Alarm1">&nbsp;</label></span>			
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row" id="Sect2">
+			<div class="cfg_row_left" id="Sect2L">Period 2</div>
+			<div class="cfg_row_right">
+				<div id="secttime2" class="recsect">
+					<input id="StartHour2" class="inputTxt rectime" /><label class='timeSplit'>:</label>
+					<input id="StartMinute2" class="inputTxt rectime" /><label class='timeSpace'>-</label>
+					<input id="EndHour2" class="inputTxt rectime"  /><label class='timeSplit'>:</label>
+					<input id="EndMinute2" class="inputTxt rectime" />
+				</div>
+				
+				<div id="RecMask2" class="recmask">
+					<span><input id="Normal2" type="checkbox"/><label for="Normal2">&nbsp;</label></span>
+					<span><input id="Motion2" type="checkbox"/><label for="Motion2">&nbsp;</label></span>			
+					<span id="Alarm2Span"><input id="Alarm2" type="checkbox"/><label for="Alarm2">&nbsp;</label></span>			
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row" id="Sect3">
+			<div class="cfg_row_left" id="Sect3L">Period 3</div>
+			<div class="cfg_row_right ">
+				<div id="secttime3" class="recsect">
+					<input id="StartHour3" class="inputTxt rectime" /><label class='timeSplit'>:</label>
+					<input id="StartMinute3" class="inputTxt rectime" /><label class='timeSpace'>-</label>
+					<input id="EndHour3" class="inputTxt rectime"  /><label class='timeSplit'>:</label>
+					<input id="EndMinute3" class="inputTxt rectime" />
+				</div>
+				
+				<div id="RecMask3" class="recmask">
+					<span><input id="Normal3" type="checkbox"/><label for="Normal3">&nbsp;</label></span>
+					<span><input id="Motion3" type="checkbox"/><label for="Motion3">&nbsp;</label></span>			
+					<span id="Alarm3Span"><input id="Alarm3" type="checkbox"/><label for="Alarm3">&nbsp;</label></span>			
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row" id="Sect4">
+			<div class="cfg_row_left" id="Sect4L">Period 4</div>
+			<div class="cfg_row_right">
+				<div id="secttime4" class="recsect">
+					<input id="StartHour4" class="inputTxt rectime" /><label class='timeSplit'>:</label>
+					<input id="StartMinute4" class="inputTxt rectime" /><label class='timeSpace'>-</label>
+					<input id="EndHour4" class="inputTxt rectime"  /><label class='timeSplit'>:</label>
+					<input id="EndMinute4" class="inputTxt rectime" />
+				</div>
+				
+				<div id="RecMask4" class="recmask">
+					<span><input id="Normal4" type="checkbox"/><label for="Normal4">&nbsp;</label></span>
+					<span><input id="Motion4" type="checkbox"/><label for="Motion4">&nbsp;</label></span>			
+					<span id="Alarm4Span"><input id="Alarm4" type="checkbox"/><label for="Alarm4">&nbsp;</label></span>			
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="BreviaryBox">
+		<div class="cfg_row">
+			<div class="cfg_row_left" id="BreviaryTip" style="width:auto;">Thumbnails</div>
+			<div id="BreviarySplit" style="float:left; width: 650px; border-bottom:1px solid gray; margin:15px 0 0 5px;">
+			</div>
+		</div>
+		<div class="cfg_row" id="Breviary_div">
+			<div class="cfg_row_left" id="BreviaryL">Enable</div>
+			<span id="BreviarySpan" style="margin-top: 6px">
+				<input type="checkbox" id="Breviary"/><label for="Breviary">&nbsp;</label>
+			</span>
+		</div>
+	</div>
+
+    <div class="cfg_row">
+        <div class="btn_box" style="margin-left:115px">
+			<button id="RECconfigCP" class="btn">Copy</button>
+			<button id="RECconfigPA" class="btn">Paste</button>
+			<button id="RECconfigDE" class="btn" style="display:none">Default</button>
+            <button id="RECconfigRF" class="btn">Refresh</button>
+            <button id="RECconfigSave" class="btn SvBtnState">Save</button> 
+        </div>
+    </div>
+</div>
+
+
+

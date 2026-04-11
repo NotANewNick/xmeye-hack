@@ -1,0 +1,120 @@
+<div class="cfg_container alarm" id="FacePage">
+	<div class="cfg_row" id="FDChannelDiv">
+		<div class="cfg_row_left" id="FD_ChannelNum">Channel</div>
+		<div class="cfg_row_right">
+			<select class="select" id="FDChannelMask"></select>
+		</div>
+	</div>
+    
+	<div class="cfg_row">
+		<div class="cfg_row_left" id="FDEnableL">Enable</div>
+		<div class="cfg_row_right">
+			<div class="selectDisable" id="FDEnable" data=''></div>
+		</div>
+	</div>
+	<div class="cfg_row">
+		<div class="split"></div>
+	</div>
+	<div id="DivBoxAll">	
+		<div class="cfg_row">
+			<div class="cfg_row_left" id="FD_PeriodL">Period</div>
+			<div class="cfg_row_right">
+				<button id="FD_Period" class="btn" style="margin-left:0px;">Setting</button>
+			</div>
+		</div>		
+		
+		<div id="FD_AOEvent" style="position:relative;">
+			<div class="MaskDiv"></div>
+			<div class="cfg_row">	
+				<div id="FD_DivBoxAO" class="first">
+					<div class="cfg_row_left" id="FDAOL">Alarm Output</div>
+					<div class="cfg_row_right rightEx" id="FD_AOChannelDiv">
+						
+					</div>
+				</div>
+				<div id="FD_AODelayDiv" class="second">
+					<div class="cfg_row_left" id="FDAODelayL">Delay</div>
+					<div class="cfg_row_right">
+						<input id="FDAODelay" class="inputTxt timeTxt" 
+						onkeyup="if(keyboardFilter(event)) {NumberRangeMax(this, 300)}"
+						onblur="NumberRange(this, 10, 300, -1)" />
+						<label id="FDAOSec">Sec(10-300)</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="MulityAlarmLinkBox">
+			<div id="FD_DivBoxTour" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="FD_TourCH">
+					<div class="cfg_row_left" id="FD_tour_1">Tour</div>
+					<div class="cfg_row_right rightEx" id="FD_TourChannelDiv"></div>
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row" id="FD_PTZSetDiv">
+			<div class="cfg_row_left" id="FD_PTZSetL">PTZ Activation</div>
+			<div class="cfg_row_right">
+				<button id="FD_PTZSet" class="btn" style="margin-left:0px">Setting</button>
+			</div>
+		</div>
+
+		<div class="cfg_row" id="fa_Alarm_tone">
+			<div class="cfg_row_left" id="fa_alarm_toneL">alarm tone</div>
+			<div class="cfg_row_right" style="width: auto;">
+				<select class="select voiceTypeSelect" id="fa_AbAlarmToneType"></select>
+				<span id="fa_alarmAndCustom">
+					<select class="select customSelect" id="fa_AbAlarmTone"></select>
+					<button id="fa_AbAlarmToneCustomButton" class="btn" style="margin-left:0px;float:none;"></button> 
+				</span>
+			</div>
+		</div>
+
+		<div class="check-btn-box group-box" id="AlarmLinkBox" style="margin-top:5px; display:none;">
+			<span id="FD_TourBox">
+				<input id="FDTour" type="checkbox"/>
+				<label for="FDTour" id="FDTourL">Tour</label>
+			</span>
+		</div>
+		<div class="check-btn-box" id="FD_enableBox" style="margin-top:15px">
+			<span id="FD_ShowMessageBox" style="display: none;">
+				<input id="FDShowMessage" type="checkbox"/>
+				<label for="FDShowMessage" id="FDshow_message">Show Message</label>
+			</span>
+			<span id="FD_SendEmailBox">
+				<input id="FDSendEmail" type="checkbox"/>
+				<label for="FDSendEmail" id="FDsendEmailL">Send Email</label>				
+			</span>			
+			<span id="FD_PhoneBox">
+				<input id="FDPhone" type="checkbox"/>
+				<label for="FDPhone" id="FDPhoneL">APP Push</label>				
+			</span>
+			<span id="FD_WriteLogBox">
+				<input id="FDWriteLog" type="checkbox"/>
+				<label for="FDWriteLog" id="FDWriteLogL">Write Log</label>				
+			</span>
+		</div>
+
+	</div>
+	<div class="cfg_row">
+		<div class="btn_box" style="margin-left:115px">
+			<button id="FD_CP" class="btn">Copy</button>
+			<button id="FD_Paste" class="btn">Paste</button>
+			<button id="FD_Default" class="btn" style="display: none;">Default</button>
+			<button id="FD_Rf" class="btn">Refresh</button>
+			<button id="FD_SV" class="btn SvBtnState">Save</button>
+		</div>
+	</div>
+	<div class="copy_box" id="pdCopyTD" style="display:none;">
+		<div class="cfg_row" id="pd_table_cp_d">
+			<div id="pdSelectCopy">Please select the channel you want to copy</div>
+		</div>
+		<div class="cfg_row" id="pd_table_cp_ok">
+			<input type="checkbox" id="pdck" class="AllCheck" />
+			<label for="pdck">
+				<font id="pdSelectedAll"> All</font>
+			</label>
+			<div class="copy_btn" id="pdOk">Copy</div>
+		</div>
+	</div>
+</div>

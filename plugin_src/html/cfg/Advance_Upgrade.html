@@ -1,0 +1,70 @@
+<div class="cfg_container">
+	
+	<div class="cfg_row" id="upgrade_Local">Local Upgrade:</div>
+	<div class="cfg_row">
+		<div class="cfg_row_left" id="upgrade_file_path">Upgrade File Path</div>
+		<div class="cfg_row_right" id="upgrade_file_btn" style="width:auto;">
+			<input readonly="readonly" id="UpGradeFileName" class="inputTxt"  style="float: left;"/>
+			<form action="" method="post" id="upfile_form" enctype="multipart/form-data" style="display: none">
+				<input type="file" id="choose" name="UpgradeData" class="choose_file" accept=".bin" style="visibility: hidden;">
+			</form>
+			<button id="BrowseBtn" class="btn">Browse</button>
+			<button id="UpgradeBtn" class="btn">Upgrade</button>
+		</div>
+	</div>
+	<div class="cfg_row"></div>
+	<div class="cfg_row" id="upgrade_Online" style="display:none">Online Upgrade:</div>
+	<div class="cfg_row" id="boxOnlineUpgrade" style="display:none">
+		<div class="cfg_row_left" id="GetNewOnlineVersion">NewVersion:</div>
+		<div class="cfg_row_right">
+			<input readonly="readonly" id="OnlineUpGradeVersion" class="inputTxt"  style="float: left;background-color: rgb(249, 250, 255);border: 0px;"/>
+            <button id="OnlineQueryBtn" class="btn" style="margin-top: 5px;display:none">OnlineQuery</button>
+			<button id="OnlineUpgradeBtn" class="btn" style="margin-top: 5px;display:none">OnlineUpgrade</button>
+		</div>
+	</div>
+	<div id="table_online_upgrade" style="display: none;">
+		<div class="cfg_row">
+			<div class="check-btn-box" id="RemindNewCheckBox">
+				<span>
+					<input id="RemindNewUpgrade" type="checkbox">
+					<label for="RemindNewUpgrade" id="RemindNewUpgradeLab">Tips Latest updates</label>
+				</span>
+			</div>
+		</div>	
+		<div class="cfg_row">
+			<div class="check-btn-box" id="upgradeCheckBox">
+				<span>
+					<input id="AutoUpgrade" type="checkbox">
+					<label for="AutoUpgrade" id="AutoUpgradeLab">Automatic firmware upgrade Important</label>
+				</span>
+			</div>
+		</div>
+	</div>
+	<div class="cfg_row"></div>
+	<div class="cfg_row" id="UPDATESTATE" style="display:none;">
+		<div class="cfg_row_left" id="OperationType" style="display:none"></div>
+		<div class="cfg_row_right">
+			<div class="update_bg">
+				<div id="aa"></div>
+			</div>
+			<label id="updateMsg" style="margin-left:5px;"></label>
+		</div>
+	</div>
+	
+	<div class="cfg_row_left"></div>
+	<div id="UpgradeRezult" class="cfg_row_right" style="display: none;"></div>
+	
+	
+	<div class="cfg_row"></div>
+	<div class="cfg_row">
+		<div id="updateWarming">Don't close the browser or turn off the power when updating!</div>
+	</div>
+	
+	<div class="cfg_row"></div>
+	<div class="cfg_row">
+	    <div class="btn_box" id="hdd_btn_box">
+			<button id="UpgradeRf" class="btn">Refresh</button>
+			<button id="UpgradeSave" class="btn SvBtnState" value="0">Save</button>
+	    </div>
+	</div>
+</div>

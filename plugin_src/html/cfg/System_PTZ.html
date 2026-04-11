@@ -1,0 +1,158 @@
+<div class="cfg_container">
+	<div class="cfg_row">
+		<div class="cfg_row_left"></div>
+		<div class="cfg_row_right">
+			<div id="PTZTitle" class="inlinebox PTZBox">PTZ Device</div>
+			<div id="RS485Title" class="inlinebox PTZBox">RS485 Device</div>
+		</div>
+	</div>
+	
+	<div class="cfg_row" id="PTZChn_div">
+		<div class="cfg_row_left" id="Chan">Channel</div>
+		<div class="cfg_row_right">
+			<select id="SelChannel" class="PTZBox"></select>
+		</div>
+	</div>
+	
+	<div class="cfg_row" id="table_control_mode">
+		<div class="cfg_row_left" id="CtrlMode">Control Mode</div>
+		<div class="cfg_row_right">
+			<select id="SelMode" class="PTZBox"></select>
+		</div>
+	</div>
+	
+	<div class="cfg_row">
+		<div class="cfg_row_left" id="Protocol">Protocol</div>
+		<div class="cfg_row_right">
+			<div class="inlinebox">
+				<select id="SelProtocol" class="PTZBox"></select>
+			</div>
+			<div class="inlinebox"> 
+				<select id="SelProtocolRS" class="PTZBox"></select>
+			</div>
+		</div>
+	</div>
+	
+	<div class="cfg_row">
+		<div class="cfg_row_left" id="Addr">Address</div>
+		<div class="cfg_row_right">
+			<div class="inlinebox">
+				<input id="InputAddress" class="PTZBoxInput" maxlength="3"
+				onkeyup="if(keyboardFilter(event)) {NumberRange(this, 0, 255, -1);}"
+				onblur="NumberRange(this, 0, 255, -1);"/>
+			</div>
+			<div class="inlinebox"> 
+				<input id="InputAddressRS" class="PTZBoxInput" maxlength="3"
+				onkeyup="if(keyboardFilter(event)) {NumberRange(this, 0, 255, -1);}"
+				onblur="NumberRange(this, 0, 255, -1);"/>
+			</div>
+		</div>
+	</div>
+	
+	<div class="cfg_row">
+		<div class="cfg_row_left" id="Baudrate">Baudrate</div>
+		<div class="cfg_row_right">
+			<div class="inlinebox">
+				<select id="SelBaudrate" class="PTZBox">
+					<option value="1200">1200</option>
+					<option value="2400">2400</option>
+					<option value="4800">4800</option>
+					<option value="9600">9600</option>
+					<option value="19200">19200</option>
+					<option value="38400">38400</option>
+					<option value="57600">57600</option>
+					<option value="115200">115200</option>
+				</select>
+			</div>
+			<div class="inlinebox"> 
+				<select id="SelBaudrateRS" class="PTZBox">
+					<option value="1200">1200</option>
+					<option value="2400">2400</option>
+					<option value="4800">4800</option>
+					<option value="9600">9600</option>
+					<option value="19200">19200</option>
+					<option value="38400">38400</option>
+					<option value="57600">57600</option>
+					<option value="115200">115200</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	
+	<div class="cfg_row">
+		<div class="cfg_row_left" id="DataBit">Data Bits</div>
+		<div class="cfg_row_right">
+			<div class="inlinebox">
+				<select id="SelDataBit" class="PTZBox">
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+				</select>
+			</div>
+			<div class="inlinebox"> 
+				<select id="SelDataBitRS" class="PTZBox">
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	
+	<div class="cfg_row">
+		<div class="cfg_row_left" id="StopBit">Stop Bits</div>
+		<div class="cfg_row_right">
+			<div class="inlinebox">
+				<select id="SelStopBit" class="PTZBox">
+					<option value="1">1</option>
+					<option value="2">2</option>
+				</select>
+			</div>
+			<div class="inlinebox">
+				<select id="SelStopBitRS" class="PTZBox">
+					<option value="1">1</option>
+					<option value="2">2</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	
+	<div class="cfg_row">
+		<div class="cfg_row_left" id="Parity">Parity</div>
+		<div class="cfg_row_right">
+			<div class="inlinebox">
+				<select id="SelParity" class="PTZBox"></select>
+			</div>
+			<div class="inlinebox">
+				<select id="SelParityRS" class="PTZBox"></select>
+			</div>
+		</div>
+	</div>
+	<div id="ptz_set_state" style="display: none;">
+		<div class="cfg_row">
+			<div class="cfg_row_left" id="BootCall">Boot calls</div>
+			<div class="cfg_row_right">
+				<div id="SwitchPowerBoot" class="selectDisable" data="0"></div>
+			</div>
+		</div>
+		<div class="cfg_row" id="selStateBox">
+			<div class="cfg_row_left"></div>
+			<div class="cfg_row_right">
+				<div class="inlinebox">
+					<select id="SelState" class="PTZBox"></select>
+				</div>
+				<div class="inlinebox">
+					<select id="SelStateID" class="PTZBox"></select>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="cfg_row">
+		<div class="btn_box">
+			<button id="BtnRefresh" class="btn">Refresh</button>
+			<button id="BtnSave" class="btn SvBtnState">Save</button>
+		</div>
+	</div>
+</div>

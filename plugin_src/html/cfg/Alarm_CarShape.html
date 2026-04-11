@@ -1,0 +1,167 @@
+<div class="cfg_container alarm" id="CarShapePage">
+	<div class="cfg_row" id="CS_ChannelDiv">
+		<div class="cfg_row_left" id="CS_ChannelNum">Channel</div>
+		<div class="cfg_row_right">
+			<select class="select" id="CS_ChannelMask"></select>
+		</div>
+	</div>
+    
+	<div class="cfg_row">
+		<div class="cfg_row_left" id="CS_EnableL">Enable</div>
+		<div class="cfg_row_right">
+			<div class="selectDisable" id="CS_Enable" data=''></div>
+		</div>
+	</div>
+	<div class="cfg_row">
+		<div class="split"></div>
+	</div>
+	<div id="DivBoxAll">	
+		<div class="cfg_row">
+			<div class="cfg_row_left" id="CS_PeriodL">Period</div>
+			<div class="cfg_row_right">
+				<button id="CS_Period" class="btn" style="margin-left:0px;">Setting</button>
+			</div>
+		</div>		
+		
+		<div id="CS_AOEvent" style="position:relative;">
+			<div class="MaskDiv"></div>
+			<div class="cfg_row">	
+				<div id="CS_DivBoxAO" class="first">
+					<div class="cfg_row_left" id="CS_AOL">Alarm Output</div>
+					<div class="cfg_row_right rightEx" id="CS_AOChannelDiv">
+						
+					</div>
+				</div>
+				<div id="CS_AODelayDiv" class="second">
+					<div class="cfg_row_left" id="CS_AODelayL">Delay</div>
+					<div class="cfg_row_right">
+						<input id="CS_AODelay" class="inputTxt timeTxt" 
+						onkeyup="if(keyboardFilter(event)) {NumberRangeMax(this, 300)}"
+						onblur="NumberRange(this, 10, 300, -1)" />
+						<label id="CS_AOSec">Sec(10-300)</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="MulityAlarmLinkBox">
+			<div id="CS_DivBoxRecord" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="CS_RecordCH">
+					<div class="cfg_row_left" id="CSrecord_channel">Record channel</div>
+					<div class="cfg_row_right rightEx" id="CS_RecChannelDiv"></div>
+				</div>
+			</div>
+
+			<div id="CS_DivBoxTour" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="CS_TourCH">
+					<div class="cfg_row_left" id="CS_tour_1">Tour</div>
+					<div class="cfg_row_right rightEx" id="CS_TourChannelDiv"></div>
+				</div>
+			</div>
+
+			<div id="CS_DivBoxSnap" style="position:relative; display: none;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="VB_SnapCH">
+					<div class="cfg_row_left" id="CSsnap_channel">Snap Channel</div>
+					<div class="cfg_row_right rightEx" id="CS_SnapChannelDiv"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="cfg_row" id="CS_PTZSetDiv">
+			<div class="cfg_row_left" id="CS_PTZSetL">PTZ Activation</div>
+			<div class="cfg_row_right">
+				<button id="CS_PTZSet" class="btn" style="margin-left:0px">Setting</button>
+			</div>
+		</div>
+
+		<div class="cfg_row" id="CS_Alarm_tone">
+			<div class="cfg_row_left" id="CS_alarm_toneL">alarm tone</div>
+			<div class="cfg_row_right" style="width: auto;">
+				<select class="select voiceTypeSelect" id="CS_AbAlarmToneType"></select>
+				<span id="CS_alarmAndCustom">
+					<select class="select customSelect" id="CS_AbAlarmTone"></select>
+					<button id="CS_AbAlarmToneCustomButton" class="btn" style="margin-left:0px;float:none;"></button> 
+				</span>
+			</div>
+		</div>
+
+		<div class="check-btn-box group-box" id="AlarmLinkBox" style="margin-top:5px; display:none;">
+			<span id="CS_RecordBox">
+				<input id="CSRecord" type="checkbox"/>
+				<label for="CSRecord" id="CSRecordL">Record</label>
+			</span>
+			<span id="CS_TourBox">
+				<input id="CSTour" type="checkbox"/>
+				<label for="CSTour" id="CSTourL">Tour</label>
+			</span>
+			<span id="CS_SnapBox" style="display: none;">
+				<input id="CSSnap" type="checkbox"/>
+				<label for="CSSnap" id="CSSnapL">Snap Channel</label>
+			</span>
+		</div>
+		
+		<div class="check-btn-box" id="CS_enableBox" style="margin-top:15px">
+			<span id="CS_ShowMessageBox" style="display: none;">
+				<input id="CS_ShowMessage" type="checkbox"/>
+				<label for="CS_ShowMessage" id="CS_show_message">Show Message</label>
+			</span>
+			<span id="CS_SendEmailBox">
+				<input id="CS_SendEmail" type="checkbox"/>
+				<label for="CS_SendEmail" id="CS_sendEmailL">Send Email</label>				
+			</span>			
+			<span id="CS_PhoneBox">
+				<input id="CS_Phone" type="checkbox"/>
+				<label for="CS_Phone" id="CS_PhoneL">APP Push</label>				
+			</span>
+			<span id="CS_FTPBox">
+				<input id="CS_FTP" type="checkbox"/>
+				<label for="CS_FTP" id="CS_FTPL">FTP</label>				
+			</span>
+			<span id="CS_WriteLogBox">
+				<input id="CS_WriteLog" type="checkbox"/>
+				<label for="CS_WriteLog" id="CS_WriteLogL">Write Log</label>				
+			</span>
+			<span id="CS_ShowTrackBox">
+				<input id="CS_ShowTrack" type="checkbox"/>
+				<label for="CS_ShowTrack" id="CS_ShowTrackL">Show Track</label>
+			</span>
+			<span id="CS_VoiceTipBox" style="display: none">
+				<input id="CS_VoiceTip" type="checkbox"/>
+				<label for="CS_VoiceTip" id="CS_VoiceTipL">Voice Tip</label>
+			</span>
+		</div>
+
+		<div class="cfg_row" id="CS_VoiceIntervalDiv" style="display:none">
+			<div class="cfg_row_left" id="CS_VoiceIntervalL">Alarm Voice Interval</div>
+			<div class="cfg_row_right">
+				<input id="CS_VoiceInterval" class="inputTxt" maxlength="4"
+				onkeyup="if(keyboardFilter(event)) {NumberRange(this, 0, 3599, -1);}"
+				onblur="NumberRange(this, 0, 3599, -1);" />
+				<label id="CS_VoiceIntervalSec">Sec(0-3599)</label>
+			</div>
+		</div>
+	</div>
+	<div class="cfg_row">
+		<div class="btn_box" style="margin-left:115px">
+			<button id="CS_CP" class="btn">Copy</button>
+			<button id="CS_Paste" class="btn">Paste</button>
+			<button id="CS_Default" class="btn" style="display: none;">Default</button>
+			<button id="CS_Rf" class="btn">Refresh</button>
+			<button id="CS_SV" class="btn SvBtnState">Save</button>
+		</div>
+	</div>
+	<div class="copy_box" id="pdCopyTD" style="display:none;">
+		<div class="cfg_row" id="pd_table_cp_d">
+			<div id="pdSelectCopy">Please select the channel you want to copy</div>
+		</div>
+		<div class="cfg_row" id="pd_table_cp_ok">
+			<input type="checkbox" id="pdck" class="AllCheck" />
+			<label for="pdck">
+				<font id="pdSelectedAll"> All</font>
+			</label>
+			<div class="copy_btn" id="pdOk">Copy</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,214 @@
+<div class="cfg_container alarm" id="table_motion">
+    <div class="cfg_row">
+		<div class="first" id="table_channel">
+			<div class="cfg_row_left" id="channels_num_1">Channel</div>
+			<div class="cfg_row_right">
+				<select class="select" id="MotionChid"></select>
+			</div>
+		</div>
+		<div id="MV_IPCLinkDiv" class="second">
+			<div class="cfg_row_left" id="MV_IPCLinkL">IPC Activation</div>
+			<div class="cfg_row_right">
+				<button id="MV_IPCLink" class="btn" style="margin-left:0px;">Setting</button>
+			</div>
+		</div>
+    </div>
+
+	<div class="cfg_row" >
+		<div class="first" id="table_sense">
+			<div class="cfg_row_left" id="start_move_sense">Enable</div>
+			<div class="cfg_row_right">
+				<input type="button" class="switch" id="MotionChnSwitch" data=''/>
+			</div>
+		</div>
+		<div class="second" id="MV_HumanEnableDiv">
+			<div class="cfg_row_left" id="MV_HumanEnableL">Human Detect</div>
+			<div class="cfg_row_right">
+				<input type="button" class="switch" id="MV_HumanEnable" data=''/>
+			</div>
+		</div>
+	</div>
+
+    <div id="MVDivBoxAll">
+		<div class="cfg_row" id="LevelRegionBox">
+			<div id="MVSense" class="first">
+				<div class="cfg_row_left" id="sense_grade">Sensitivity</div>
+				<div class="cfg_row_right">
+					<select class="select" id="MVSensitivity">               
+					</select>
+				</div>
+			</div>
+			<div id="RegionDiv" class="second">
+				<div class="cfg_row_left" id="RegionL">Region</div>
+				<div class="cfg_row_right">
+					<button id="RegionSet" class="btn" style="margin-left:0px;">Setting</button>
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row">
+			<div class="split"></div>
+		</div>
+		<div class="cfg_row">
+			<div id="MV_PeriodDiv" class="first">
+				<div class="cfg_row_left" id="MV_PeriodL">Period</div>
+				<div class="cfg_row_right">
+					<button id="MV_Period" class="btn" style="margin-left:0px;">Setting</button>
+				</div>
+			</div>
+			<div id="MV_EventLatchDiv" class="second">
+				<div class="cfg_row_left" id="MVEventLatchL">Interval</div>
+				<div class="cfg_row_right">
+					<input id="MVEventLatch" class="inputTxt timeTxt"  maxlength="3"
+					onkeyup="if(keyboardFilter(event)) {NumberRange(this, 0, 600, -1);}"
+					onblur="NumberRange(this, 0, 600, -1);" />
+					<label id="MVLatchSec">Sec(0-600)</label>
+				</div>
+			</div>
+		</div>
+		
+		<div class="cfg_row" id="MV_AOEvent" style="position:relative;">
+			<div class="MaskDiv"></div>
+			<div id="MV_outputDiv" class="first">
+				<div class="cfg_row_left" id="MVAOL">Alarm Output</div>
+				<div class="cfg_row_right rightEx" id="MV_AOChannelDiv">
+				</div>
+			</div>
+			<div id="MV_AODelayDiv" class="second">
+				<div class="cfg_row_left" id="MVAODelayL">Delay</div>
+				<div class="cfg_row_right">
+					<input id="MVAODelay" class="inputTxt timeTxt" 
+					onkeyup="if(keyboardFilter(event)) {NumberRangeMaxEx(this, 300);}"
+					onblur="NumberRange(this, 10, 300, -1);" />
+					<label id="MVAOSec">Sec(10-300)</label>
+				</div>
+			</div>
+		</div>
+		<div id="MulityAlarmLinkBox">
+			<div id="MV_DivBoxRecord" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="MV_RecordCH">
+					<div class="cfg_row_left" id="MVrecord_channel">Record channel</div>
+					<div class="cfg_row_right rightEx" id="MV_RecChannelDiv"></div>
+				</div>
+			</div>
+
+			<div id="MV_DivBoxTour" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="MV_TourCH">
+					<div class="cfg_row_left" id="MVtour_channel">Tour</div>
+					<div class="cfg_row_right rightEx" id="MV_TourChannelDiv"></div>
+				</div>
+			</div>		
+		
+			<div id="MV_DivBoxSnap" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="MV_SnapCH">
+					<div class="cfg_row_left" id="MVsnap_channel">Snap Channel</div>
+					<div class="cfg_row_right rightEx" id="MV_SnapChannelDiv"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="cfg_row">
+			<div id="MV_PTZSetDiv" class="first">
+				<div class="cfg_row_left" id="MV_PTZSetL">PTZ Activation</div>
+				<div class="cfg_row_right">
+					<button id="MV_PTZSet" class="btn" style="margin-left:0px">Setting</button>
+				</div>
+			</div>
+			<div id="MV_RecordDelayDiv" class="second">
+				<div class="cfg_row_left" id="MVRecordDelayL">Post Record</div>
+				<div class="cfg_row_right">
+					<input id="MVRecordDelay" class="inputTxt timeTxt" maxlength="3"
+					onkeyup="if(keyboardFilter(event)) {NumberRangeMaxEx(this, 300);}"
+					onblur="NumberRange(this, 10, 300, -1);" />
+					<label id="MVRecordSec">Sec(10-300)</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="cfg_row" id="mo_Alarm_tone">
+			<div class="cfg_row_left" id="mo_alarm_toneL">alarm tone</div>
+			<div class="cfg_row_right" style="width: auto;">
+				<select class="select voiceTypeSelect" id="mo_AbAlarmToneType"></select>
+				<span id="mo_alarmAndCustom">
+					<select class="select customSelect" id="mo_AbAlarmTone"></select>
+					<button id="mo_AbAlarmToneCustomButton" class="btn" style="margin-left:0px;float:none;"></button> 
+				</span>
+			</div>
+		</div>
+		
+		<div class="check-btn-box group-box" id="AlarmLinkBox" style="margin-top:5px; display:none;">
+			<span id="MV_RecordBox">
+				<input id="MVRecord" type="checkbox"/>
+				<label for="MVRecord" id="MVRecordL">Record</label>
+			</span>
+			<span id="MV_TourBox">
+				<input id="MVTour" type="checkbox"/>
+				<label for="MVTour" id="MVTourL">Tour</label>
+			</span>
+			<span id="MV_SnapBox">
+				<input id="MVSnap" type="checkbox"/>
+				<label for="MVSnap" id="MVSnapL">Snap Channel</label>
+			</span>
+		</div>
+
+		<div class="check-btn-box" id="MV_enableBox" style="margin-top:15px">
+			<span id="MV_ShowMessageBox" style="display: none;">
+				<input id="MVShowMessage" type="checkbox"/>
+				<label for="MVShowMessage" id="MVshow_message">Show Message</label>
+			</span>
+			<span id="MV_SendEmailBox">
+				<input id="MVSendEmail" type="checkbox"/>
+				<label for="MVSendEmail" id="MVsendEmailL">Send Email</label>				
+			</span>				
+			<span id="MV_PhoneBox">
+				<input id="MVPhone" type="checkbox"/>
+				<label for="MVPhone" id="MVPhoneL">APP Push</label>				
+			</span>
+			<span id="MV_FTPBox">
+				<input id="MVFTP" type="checkbox"/>
+				<label for="MVFTP" id="MVFTPL">FTP</label>				
+			</span>
+			<span id="MV_WriteLogBox">
+				<input id="MVWriteLog" type="checkbox"/>
+				<label for="MVWriteLog" id="MVWriteLogL">Write Log</label>				
+			</span>
+			<span id="MV_VoiceBox">
+				<input id="MVVoice" type="checkbox"/>
+				<label for="MVVoice" id="MVVoiceL">Alarm Sound
+				</label>				
+			</span>
+		</div>
+    </div>
+	<div class="cfg_row" id="VoiceTipDiv" style="display:none;">
+		<div class="cfg_row_left" id="VoiceTipL">Voice Prompt</div>
+		<div class="cfg_row_right">
+			<select class="select customSelect" id="VoiceTip" style="float:left">               
+			</select>
+			<div id="Custom_box" style="float:left;">
+				<button id="VoiceTipBtn" class="btn autoWidth" style="margin-left:5px;">Custom</button>
+			</div>
+		</div>
+	</div>
+	
+	<div class="cfg_row" id="VoiceIntervalDiv" style="display:none">
+		<div class="cfg_row_left" id="VoiceIntervalL">Delay</div>
+		<div class="cfg_row_right">
+			<input id="VoiceInterval" class="inputTxt" maxlength="4"
+			onkeyup="if(keyboardFilter(event)) {NumberRange(this, 0, 3599, -1);}"
+			onblur="NumberRange(this, 0, 3599, -1);" />
+			<label id="VoiceIntervalSec">Sec(0-3599)</label>
+		</div>
+	</div>
+	
+    <div class="cfg_row">
+		<div class="btn_box" id="mv_btn_box">
+			<button id="MVCP" class="btn">Copy</button>
+			<button id="MVPaste" class="btn">Paste</button>
+			<button id="MVDefault" class="btn" style="display: none">Default</button>
+			<button id="MVRf" class="btn">Refresh</button>
+			<button id="MVSave" class="btn SvBtnState">Save</button>
+		</div>
+    </div>
+</div>

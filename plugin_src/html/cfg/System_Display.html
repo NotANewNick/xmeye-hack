@@ -1,0 +1,133 @@
+<div class="cfg_container">
+	<div class="cfg_row" id="table_chnName_set">
+		<div class="cfg_row_left" id="ChanNameL">CAM Name</div>
+		<div class="cfg_row_right">
+			<button class="btn SvBtnState" id="BtnChanNameSet" style="margin-left:0px;">Setting</button>
+		</div>
+	</div>
+	
+	<div id="DVRSet_BOX">
+		<div class="check-btn-box">
+			<span>
+				<input id="TimeTitle" type="checkbox"/>
+				<label for="TimeTitle" id="LabTimeTitle">Time Title</label>
+			</span>
+			<span>
+				<input id="ChannelTitle" type="checkbox"/>
+				<label for="ChannelTitle" id="LabChannelTitle">Channel Title</label>
+			</span>
+			<span id="SpanRecord">
+				<input id="RecordStatus" type="checkbox"/>
+				<label for="RecordStatus" id="LabRecordStatus">Video Status</label>
+			</span>
+		</div>
+		<div class="check-btn-box">
+			<span>
+				<input id="AlarmStatus" type="checkbox"/>
+				<label for="AlarmStatus" id="LabAlarmStatus">Alarm Status</label>
+			</span>
+		<!--<span>
+				<input id="ResistTwitter" type="checkbox"/>
+				<label for="ResistTwitter" id="LabResistTwitter">Anti-jitter</label>
+			</span>-->
+			<span>
+				<input id="AlarmGlint" type="checkbox"/>
+				<label for="AlarmGlint" id="LabAlarmGlint">Alarm Glint</label>
+			</span>
+		</div>
+		<div class="check-btn-box">
+			<span>
+				<input id="QRoceEn" type="checkbox"/>
+				<label for="QRoceEn" id="LaQRoceEn">QRoceEn</label>
+			</span>
+			<span>
+				<input id="ChanWindowGrid" type="checkbox"/>
+				<label for="ChanWindowGrid" id="LaChanWindowGrid">ChanWindowGrid</label>
+			</span>
+			<span>
+				<input id="BitRateEn" type="checkbox"/>
+				<label for="BitRateEn" id="LaBitRateEn">BitRateEn</label>
+			</span>
+		</div>
+		
+		<div class="cfg_row" id="table_translider">
+			<div class="cfg_row_left" id="Transparence">Transparency</div>
+			<div class="cfg_row_right">
+				<div id="TranSlider"></div>
+			</div>
+		</div>
+		
+		<div class="cfg_row" id="table_Res">
+			<div class="cfg_row_left" id="VideoRes">Resolution</div>
+			<div class="cfg_row_right">
+				<select id="SelVideoRes" class="select"></select>
+			</div>
+		</div>
+	</div>
+	<div class="cfg_row">
+		<div style="width:600px; border-bottom:1px solid #E6E6E6; padding-top:15px"></div>
+	</div>
+	<div id="CfgBox">
+		<div class="cfg_row">
+			<div class="cfg_row_left" id="Channel">Channel</div>
+			<div class="cfg_row_right">
+				<select id="SelChannel" class="select"></select>
+			</div>
+		</div>
+		
+		<div id="CoverBox" style="display: none;">
+			<div class="cfg_row">
+				<div class="cfg_row_left" id="Cover">Region Cover</div>
+				<div class="cfg_row_right">
+					<div id="SwitchCover" class="selectDisable" data="0"></div>
+				</div>
+			</div>
+			<div class="cfg_row" id="table_cover_set">
+				<div class="cfg_row_left"></div>
+				<div class="cfg_row_right">
+					<div class="inlinebox">
+						<div id="CoverChan"></div>
+					</div>
+					<div class="inlinebox">
+						<button id="BtnCoverSet" class="btn SvBtnState">Setting</button>
+					</div>
+				</div>
+			</div>
+			<div class="cfg_row" id="coverSpace"></div>
+		</div>
+		
+		<div class="check-btn-box">
+			<span>
+				<input id="TimeTitle2" type="checkbox"/>
+				<label for="TimeTitle2" id="LabTimeTitle2">Time Title</label>
+			</span>
+			<span>
+				<input id="ChannelTitle2" type="checkbox"/>
+				<label for="ChannelTitle2" id="LabChannelTitle2">Channel Title</label>
+			</span>
+			<span id="SpanOSD" style="display: none;">
+				<input id="OSD" type="checkbox"/>
+				<label for="OSD" id="LabOSD"></label>
+			</span>
+			<div class="inlinebox">
+				<button id="BtnChannelSet" class="btn SvBtnState">Setting</button>
+			</div>
+		</div>
+	
+		<div class="cfg_row" id="OSDBox" style="display: none;">
+			<div class="cfg_row_left" id="OSDInfo"></div>
+			<div class="cfg_row_right" id="OSDInputBox"></div>
+			<div class="cfg_row_right" id = "BtnOSDDiv" style="display:none;">
+				<button class="btn SvBtnState" id="BtnChanOSDSet">Setting</button>
+			</div>
+		</div>
+	</div>
+	
+	<div class="cfg_row">
+		<div class="btn_box">
+			<button class="btn" id="BtnRefresh">Refresh</button>
+			<button class="btn SvBtnState" id="BtnSave">Save</button>
+		</div>
+	</div>
+</div>
+

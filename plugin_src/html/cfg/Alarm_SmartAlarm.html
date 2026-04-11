@@ -1,0 +1,158 @@
+<div class="cfg_container alarm SmartAlarm" id="SmartAlarm">
+
+    <div class="cfg_row">
+        <div class="first" id="SA_ChannelDiv">
+            <div class="SA_Cfg_row cfg_row_left" id="SA_ChannelL">Channel</div>
+            <div class="cfg_row_right">
+                <select class="select" id="SA_Channel"></select>
+            </div>
+        </div>
+        <div class="second" id="SA_EnableDiv">
+            <div class="SA_Cfg_row cfg_row_left" id="SA_EnableL">Enable</div>
+            <div class="cfg_row_right">
+                <input type="button" class="switch" id="SA_Enable" data='' />
+            </div>
+        </div>
+    </div>
+
+    <div class="cfg_row">
+        <div class="split"></div>
+    </div>
+
+    <div id="SA_CfgBox">
+        <div class="cfg_row" id="SA_FaceAndMotionDiv">
+            <div class="first" id="SA_MotionAndHumanDiv">
+                <div class="SA_Cfg_row cfg_row_left" id="SA_HumanL">HumanDetect</div>
+                <div class="cfg_row_right">
+                    <input type="button" class="switch" id="SA_MotionAndHumanSwitch" data='' />
+                </div>
+            </div>
+            <div class="second FaceClass" id="SA_FaceDiv">
+                <div class="SA_Cfg_row cfg_row_left SA_FaceL">FaceDetect</div>
+                <div class="cfg_row_right">
+                    <input type="button" class="switch" id="SA_FaceEnable" data='' />
+                </div>
+            </div>
+        </div>
+        <div class="cfg_row" id="SA_CustomFlowDiv">
+            <div class="first" id="SA_CustomFlow">
+                <div class="SA_Cfg_row cfg_row_left" id="SA_CustomFlowL">CustomFlow Switch</div>
+                <div class="cfg_row_right">
+                    <input type="button" class="switch" id="SA_CustomFlowSwitch" data='' />
+                </div>
+            </div>
+        </div>
+
+        <div class="ToolBoxBlock">
+
+            <div class="TableDivLine">
+                <div class="TableDivColumn">&nbsp;</div>
+                <div class="TableDivColumn" id="SA_MotionAndHumanL">Motion</div>
+                <div class="SA_FaceL TableDivColumn FaceClass Face_Config">FaceDetect</div>
+            </div>
+
+            <div class="TableDivLine" id="SA_Record_line">
+                <div class="TableDivColumn" id="SA_Record">Record</div>
+                <div class="TableDivColumn">
+                    <span class="SA_CheckBox" id="SA_MotionAndHuman_Record_Span">
+                        <input type="checkbox" id="SA_MotionAndHuman_Record" class="SA_CheckBox" />
+                        <label for="SA_MotionAndHuman_Record">&nbsp;</label>
+                    </span>
+                </div>
+                <div class="TableDivColumn">
+                    <span class="SA_CheckBox FaceClass Face_Config" id="SA_Face_Record_Span">
+                        <input type="checkbox" id="SA_Face_Record" class="SA_CheckBox" />
+                        <label for="SA_Face_Record">&nbsp;</label>
+                    </span>
+                </div>
+            </div>
+
+            <div class="TableDivLine" id="SA_PhoneUp_line">
+                <div class="TableDivColumn" id="SA_PhoneUp">App push</div>
+                <div class="TableDivColumn">
+                    <span class="SA_CheckBox" id="SA_MotionAndHuman_PhoneUp_Span">
+                        <input type="checkbox" id="SA_MotionAndHuman_PhoneUp" class="SA_CheckBox" />
+                        <label for="SA_MotionAndHuman_PhoneUp">&nbsp;</label>
+                    </span>
+                </div>
+                <div class="TableDivColumn">
+                    <span class="SA_CheckBox FaceClass Face_Config" id="SA_Face_PhoneUp_Span">
+                        <input type="checkbox" id="SA_Face_PhoneUp" class="SA_CheckBox" />
+                        <label for="SA_Face_PhoneUp">&nbsp;</label>
+                    </span>
+                </div>
+            </div>
+
+            <div class="TableDivLine" id="SA_AlarmSound_line">
+                <div class="TableDivColumn" id="SA_AlarmSound">Alarm Sound</div>
+                <div class="TableDivColumn">
+                    <span class="SA_CheckBox" id="SA_MotionAndHuman_AlarmSound_Span">
+                        <input type="checkbox" id="SA_MotionAndHuman_AlarmSound" class="SA_CheckBox" />
+                        <label for="SA_MotionAndHuman_AlarmSound">&nbsp;</label>
+                    </span>
+                </div>
+                <div class="TableDivColumn">
+                </div>
+            </div>
+            <div class="TableDivLine" id="SA_AlarmLight_line">
+                <div class="TableDivColumn" id="SA_AlarmLight">Alarm Light</div>
+                <div class="TableDivColumn">
+                    <span class="SA_CheckBox" id="SA_MotionAndHuman_AlarmLight_Span">
+                        <input type="checkbox" id="SA_MotionAndHuman_AlarmLight" class="SA_CheckBox" />
+                        <label for="SA_MotionAndHuman_AlarmLight">&nbsp;</label>
+                    </span>
+                </div>
+                <div class="TableDivColumn">
+                </div>
+            </div>
+
+            <div class="TableDivLine" id="SA_Advance_line">
+                <div class="TableDivColumn" id="SA_Advance">Advance</div>
+                <div class="TableDivColumn">
+                    <span>
+                        <button class="btn SA_AdvanceSet" id="SA_MotionAndHuman_Advance_Set"
+                            style="float:none;margin-left: 0px;">Setting</button>
+                    </span>
+                </div>
+                <div class="TableDivColumn">
+                    <span class="FaceClass Face_Config">
+                        <button class="btn SA_AdvanceSet" id="SA_Face_Advance_Set"
+                            style="float:none;margin-left: 0px;">Setting</button>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+        <div class="cfg_row">
+            <div class="first" id="SA_Sensitiveness">
+                <div class="SA_Cfg_row cfg_row_left" id="SA_SensitivenessL">Sensitiveness</div>
+                <div class="cfg_row_right">
+                    <select class="select" id="SA_SensitivenessS"></select>
+                </div>
+            </div>
+            <div class="second" id="SA_RuleAndRegion">
+                <div class="SA_Cfg_row cfg_row_left " id="SA_RuleAndRegionL">Region</div>
+                <div class="cfg_row_right">
+                    <button class="btn" id="SA_RuleAndRegionBtn" style="margin-left: 0px;">settting</button>
+                </div>
+            </div>
+        </div>
+        <div class="cfg_row">
+            <div class="first" id="SA_IsOutsideDiv">
+                <div class="SA_Cfg_row cfg_row_left" id="SA_IsOutsideL">Is Outside</div>
+                <div class="cfg_row_right">
+                    <select class="select" id="SA_IsOutsideSel"></select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cfg_row">
+        <div class="btn_box" id="SA_btn_box">
+            <button id="SA_CP" class="btn">Copy</button>
+            <button id="SA_Paste" class="btn">Paste</button>
+			<button id="SA_Default" class="btn" style="display: none;">Default</button>
+            <button id="SA_Rf" class="btn">Refresh</button>
+            <button id="SA_Save" class="btn SvBtnState">Save</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,149 @@
+<div class="cfg_container" style="padding-left:20px">
+    <div id="VideoColorBox">
+        <div class="first" id="table_channel">
+			<div class="cfg_row_left  VideoCtrlBox" id="channels_num_1">Channel</div>
+			<div class="cfg_row_right">
+				<select class="select" id="ColorChid" style="width:200px"></select>
+			</div>
+		</div>
+        <div class="ColorSetCenter" id="colorsetOcx"></div>
+        <div id="ColorSet_Box" style="float: left;">
+            <div class="cfg_row VideoCtrlBox" id="IR_Cut_0" style="display: none;">
+                <div class="cfg_row_left" id="TimeSectionL">Period</div>
+                <div id="SectBox">
+                    <div id="Sect" style="float:left; margin-left:0px">
+                        <span class="timespan">				
+                            <input id="TimeEnable" type="checkbox" />
+                            <label for="TimeEnable">&nbsp</label>
+                        </span>
+                        <div id="TimeSection" class="time-div">
+                            <input id="BH" type="text" /><label class='timeSplit'>:</label>
+                            <input id="BM" type="text" /><label class='timeSpace'>-</label>
+                            <input id="EH" type="text" /><label class='timeSplit'>:</label>
+                            <input id="EM" type="text" />
+                        </div>
+                    </div>
+                    <div id="Sect2" class="second" style="float:left; margin-left:30px">
+                        <span class="timespan">				
+                            <input id="TimeEnable2" type="checkbox"/>
+                            <label for="TimeEnable2">&nbsp</label>
+                        </span>
+                        <div id="TimeSection2" class="time-div">
+                            <input id="BH2" type="text" /><label class='timeSplit'>:</label>
+                            <input id="BM2" type="text" /><label class='timeSpace'>-</label>
+                            <input id="EH2" type="text" /><label class='timeSplit'>:</label>
+                            <input id="EM2" type="text" />
+                        </div>
+                    </div>
+                </div>
+                <div id="IrcutDiv" style="display:none"style="float:left; margin-left:50px">
+                    <div id="IrcutClose">Infrared Off</div>
+                    <div id="IrcutOpen" class="second">Infrared On</div>
+                </div>
+                
+            </div>
+
+            <div class="cfg_row VideoCtrlBox" id="IR_Cut_1" style="display:none;">
+                <div id="InfraredLamp_Close" style="margin-left:180px; width:165px; display:inline-block;">Close</div>
+                <div id="InfraredLamp_Open" style="margin-left:6px; display:inline-block;">Open</div>
+            </div>
+
+            <div class="cfg_row VideoCtrlBox" id="BrightnessDiv">
+                <div class="cfg_row_left" id="BrightnessL">Brightness</div>
+                <div class="cfg_row_right">
+                    <div class="MaskDiv" style="height: 100%;"></div>
+                    <div id="Brightness_Slider"></div>
+                    <div id="Brightness_Slider2" class="second"></div>
+                </div>
+            </div>
+            <div class="cfg_row VideoCtrlBox" id="ContrastDiv">
+                <div class="cfg_row_left" id="ContrastL">Contrast</div>
+                <div class="cfg_row_right">
+                    <div class="MaskDiv" style="height: 100%;"></div>
+                    <div id="Contrast_Slider"></div>
+                    <div id="Contrast_Slider2" class="second"></div>
+                </div>
+            </div>
+            <div class="cfg_row VideoCtrlBox" id="SaturationDiv">
+                <div class="cfg_row_left" id="SaturationL">Saturation</div>
+                <div class="cfg_row_right">
+                    <div class="MaskDiv" style="height: 100%;"></div>
+                    <div id="Saturation_Slider"></div>
+                    <div id="Saturation_Slider2" class="second"></div>
+                </div>
+            </div>
+            <div class="cfg_row VideoCtrlBox" id="HueDiv">
+                <div class="cfg_row_left" id="HueL">Hue</div>
+                <div class="cfg_row_right">
+                    <div class="MaskDiv" style="height: 100%;"></div>
+                    <div id="Hue_Slider"></div>
+                    <div id="Hue_Slider2" class="second"></div>
+                </div>
+            </div>
+            <div class="cfg_row VideoCtrlBox" id="GainDiv">
+                <div class="cfg_row_left" id="GainL">Gain</div>
+                <div class="cfg_row_right">
+                    <div class="MaskDiv" style="height: 100%;"></div>
+                    <div id="Gain_Slider"></div>
+                    <div id="Gain_Slider2" class="second"></div>
+                </div>
+            </div>	
+            <div class="cfg_row VideoCtrlBox" id="HorizontalDiv">
+                <div class="cfg_row_left" id="HorizontalL">Horizontal Acutance</div>
+                <div class="cfg_row_right">
+                    <div class="MaskDiv" style="height: 100%;"></div>
+                    <div id="Horizontal_Slider"></div>
+                    <div id="Horizontal_Slider2" class="second"></div>
+                </div>
+            </div>
+            <div class="cfg_row VideoCtrlBox" id="VerticalDiv">
+                <div class="cfg_row_left" id="VerticalL">Vertical Acutance</div>
+                <div class="cfg_row_right">
+                    <div class="MaskDiv" style="height: 100%;"></div>
+                    <div id="Vertical_Slider"></div>
+                    <div id="Vertical_Slider2" class="second"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="check-box" id="CameraSet" style="float:left; margin-left:315px">
+        <span id="MirrorDiv">
+            <input type="checkbox" id="MirrorCkbox" />
+            <label for="MirrorCkbox" id="Mirror_lg">Mirror</label>
+        </span>
+        <span id="RollDiv">
+            <input type="checkbox" id="RollCkbox" />
+            <label for="RollCkbox" id="Roll_lg">Flip</label>
+        </span>
+    </div>
+
+    <div class="btn_box" style="float:left; margin-left:330px; width:100%">
+        <button type="button" class="btn" id="ColorSetdefault">Default</button>
+		<div id="AnalogBtnBox" style="display:none;">
+			<button type="button" class="btn" id="ColdColorSet">Cold Color</button>
+			<button type="button" class="btn" id="WarmColorSet">Warm Color</button>
+			<button type="button" class="btn" id="DftColorSet">Default Color</button>
+			<button type="button" class="btn" id="CopySet">Copy</button>
+		</div>
+        <button type="button" class="btn" id="ColorSet_Ok">OK</button>
+        <button type="button" class="btn" id="ColorSet_Refresh">Refresh</button>
+    </div>
+	
+	<!-- channel copy -->
+    <div class="copy_box" id="colorCopyTD" style="display:none; float:left">
+		<div class="cfg_row" id="color_table_cp_d">
+			<div id="colorSelectCopy">Please select the channel you want to copy</div>
+		</div>
+		<div class="cfg_row" id="Color_table_cp_ok">		
+			<div class="copy_btn" id="colorOk">Copy</div>
+			<span style="float:left; margin-top:5px;">
+				<input type="checkbox" id="colorck" class="AllCheck" />
+				<label for="colorck"><font id="colorSelectedAll"> All</font></label>
+			</span>
+		</div>
+		<div class="cfg_row" id="CopyChanBox" style="margin-top:10px;">		
+			<div id="CopyChanDiv"></div>
+		</div>
+	</div>
+    
+</div>

@@ -1,0 +1,189 @@
+<div class="cfg_container alarm" id="table_alarminput">
+	<div class="cfg_row" id="table_type">
+		<div class="cfg_row_left" id="alarm_type">Type</div>
+		<div class="cfg_row_right">
+			<select class="select" id="alarmType"></select>
+		</div>
+	</div>
+	
+	<div class="cfg_row" id="table_channel">
+		<div class="cfg_row_left" id="alarm_channel">Channel</div>
+		<div class="cfg_row_right">
+			<select class="select" id="alarmChannel"></select>
+		</div>
+	</div>
+
+	<div class="cfg_row" id="table_enable">
+		<div class="cfg_row_left" id="alarm_enable">Enable</div>
+		<div class="cfg_row_right">
+			<input type="button" class="switch" id="alarmEnableSwitch" data=''/>
+		</div>	
+	</div>
+	<div class="cfg_row" id="table_dev_type">
+		<div class="cfg_row_left" id="alarm_dev_type">Dev Type</div>
+		<div class="cfg_row_right">
+			<select class="select" id="alarmDevType"></select>
+		</div>
+	</div>
+	<div class="cfg_row">
+		<div class="split"></div>
+	</div>
+	<div id="INDivBoxAll">
+		<div class="cfg_row">
+			<div id="IN_PeriodDiv" class="first" >
+				<div class="cfg_row_left" id="IN_PeriodL">Period</div>
+				<div class="cfg_row_right">
+					<button id="IN_Period" class="btn" style="margin-left:0px;">Setting</button>
+				</div>
+			</div>
+			<div id="IN_EventLatchDiv" class="second">
+				<div class="cfg_row_left" id="INEventLatchL">Interval</div>
+				<div class="cfg_row_right">
+					<input id="INEventLatch" class="inputTxt timeTxt" 
+					onkeyup="if(keyboardFilter(event)) {NumberRangeMaxEx(this, 600)}"
+					onblur="if(this.value == '') this.value='0'" />
+					<label id="INLatchSec">Sec(0-600)</label>
+				</div>
+			</div>
+		</div>
+		
+		<div id="IN_AOEvent" class="cfg_row" style="position:relative;">
+			<div class="MaskDiv"></div>
+			<div id="IN_outputDiv", class="first">
+				<div class="cfg_row_left" id="INAOL">Alarm Output</div>
+				<div class="cfg_row_right rightEx" id="IN_AOChannelDiv">
+					
+				</div>
+			</div>
+			<div id="IN_AODelayDiv" class="second">
+				<div class="cfg_row_left" id="INAODelayL">Delay</div>
+				<div class="cfg_row_right">
+					<input id="INAODelay" class="inputTxt timeTxt" 
+					onkeyup="if(keyboardFilter(event)) {NumberRangeMax(this, 300)}"
+					onblur="NumberRange(this, 10, 300, -1)" />
+					<label id="INAOSec">Sec(10-300)</label>
+				</div>
+			</div>
+		</div>
+		<div id="MulityAlarmLinkBox">
+			<div id="IN_DivBoxRecord" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="IN_RecordCH">
+					<div class="cfg_row_left" id="INrecord_channel">Record channel</div>
+					<div class="cfg_row_right rightEx" id="IN_RecChannelDiv"></div>
+				</div>
+			</div>
+
+			<div id="IN_DivBoxTour" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="IN_TourCH">
+					<div class="cfg_row_left" id="INtour_channel">Tour</div>
+					<div class="cfg_row_right rightEx" id="IN_TourChannelDiv"></div>
+				</div>
+			</div>		
+		
+			<div id="IN_DivBoxSnap" style="position:relative;">
+				<div class="MaskDiv"></div>
+				<div class="cfg_row" id="IN_SnapCH">
+					<div class="cfg_row_left" id="INsnap_channel">Snap Channel</div>
+					<div class="cfg_row_right rightEx" id="IN_SnapChannelDiv"></div>
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row">
+			<div id="IN_PTZSetDiv" class="first">
+				<div class="cfg_row_left" id="IN_PTZSetL">PTZ Activation</div>
+				<div class="cfg_row_right">
+					<button id="IN_PTZSet" class="btn" style="margin-left:0px">Setting</button>
+				</div>
+			</div>
+			<div id="IN_RecordDelayDiv" class="second">
+				<div class="cfg_row_left" id="INRecordDelayL">Post Record</div>
+				<div class="cfg_row_right">
+					<input id="INRecordDelay" class="inputTxt timeTxt" 
+					onkeyup="if(keyboardFilter(event)) {NumberRangeMax(this, 300)}"
+						onblur="NumberRangeMin(this,10)" />
+						<label id="INRecordSec">Sec(10-300)</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="cfg_row" id="in_Alarm_tone">
+			<div class="cfg_row_left" id="in_alarm_toneL">alarm tone</div>
+			<div class="cfg_row_right" style="width: auto;">
+				<select class="select voiceTypeSelect" id="in_AbAlarmToneType"></select>
+				<span id="in_alarmAndCustom">
+					<select class="select customSelect" id="in_AbAlarmTone"></select>
+					<button id="in_AbAlarmToneCustomButton" class="btn" style="margin-left:0px;float:none;"></button>
+				</span>
+			</div>
+		</div>
+		<div class="check-btn-box group-box" id="AlarmLinkBox" style="margin-top:5px; display:none;">
+			<span id="IN_RecordBox">
+				<input id="INRecord" type="checkbox"/>
+				<label for="INRecord" id="INRecordL">Record</label>
+			</span>
+			<span id="IN_TourBox">
+				<input id="INTour" type="checkbox"/>
+				<label for="INTour" id="INTourL">Tour</label>
+			</span>
+			<span id="IN_SnapBox">
+				<input id="INSnap" type="checkbox"/>
+				<label for="INSnap" id="INSnapL">Snap Channel</label>
+			</span>
+		</div>
+		<div class="check-btn-box" id="IN_enableBox" style="margin-top:15px">
+			<span id="IN_ShowMessageBox" style="display:none;">
+				<input id="INShowMessage" type="checkbox"/>
+				<label for="INShowMessage" id="INshow_message">Show Message</label>
+			</span>
+			<span id="IN_SendEmailBox">
+				<input id="INSendEmail" type="checkbox"/>
+				<label for="INSendEmail" id="INsendEmailL">Send Email</label>				
+			</span>				
+			<span id="IN_PhoneBox">
+				<input id="INPhone" type="checkbox"/>
+				<label for="INPhone" id="INPhoneL">APP Push</label>				
+			</span>
+			<span id="IN_FTPBox">
+				<input id="INFTP" type="checkbox"/>
+				<label for="INFTP" id="INFTPL">FTP</label>				
+			</span>
+			<span id="IN_WriteLogBox">
+				<input id="INWriteLog" type="checkbox"/>
+				<label for="INWriteLog" id="INWriteLogL">Write Log</label>				
+			</span>
+			<span id="IN_ShortMsgBox">
+				<input id="INShortMsg" type="checkbox"/>
+				<label for="INShortMsg" id="INShortMsgL">SMS</label>				
+			</span>
+			<span id="IN_MultimediaBox">
+				<input id="INMultimedia" type="checkbox"/>
+				<label for="INMultimedia" id="INMultimediaL">MMS</label>				
+			</span>
+		</div>
+
+    </div>
+	<div class="cfg_row">
+		<div class="btn_box" id="alarm_btn_box">
+			<button id="INCP" class="btn">Copy</button>
+			<button id="INPaste" class="btn">Paste</button>
+			<button id="INDefault" class="btn" style="display: none;">Default</button>
+			<button id="INRf" class="btn">Refresh</button>
+			<button id="INSave" class="btn SvBtnState">Save</button>		
+		</div>
+	</div>
+    <!-- channel copy -->
+    <div class="copy_box" id="CopyTD" style="display:none;">
+        <div class="cfg_row" id="table_cp_d">
+            <div id="SelectCopy">Please select the channel you want to copy</div>
+        </div>
+
+        <div class="cfg_row" id="table_cp_ok">
+            <input type="checkbox" id="allck" class="AllCheck" />
+            <label for="allck"><font id="SelectedAll"> All</font></label>
+
+            <div class="copy_btn" id="copyOk">Copy</div>
+        </div>
+    </div>
+</div>

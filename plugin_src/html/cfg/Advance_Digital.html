@@ -1,0 +1,116 @@
+<div class="cfg_container alarm" id="DigitalPage">
+	<div class="cfg_row">
+		<div class="first" id="DigitalChDiv">
+			<div class="cfg_row_left" id="DigitalChL">Channel</div>
+			<div class="cfg_row_right">
+				<select class="select" id="DigitalCh"></select>
+			</div>
+		</div>
+		<div class="second" id="Digital_Switch_DIV">
+			<div class="cfg_row_left" id="Digital_Switch">Enable</div>
+			<div class="cfg_row_right">
+				<input type="button" class="switch" id="DigitalSwitch" data=''/>
+			</div>
+		</div>
+	</div>
+	<div id="DivBoxAll">
+		<div class="cfg_row">
+			<div class="first" id="TimeMode_Div">
+				<div class="cfg_row_left" id="TimeModeL">Time</div>
+				<div class="cfg_row_right" id="TimeMode_div" style="display:none">
+					<select class="select" id="TimeMode"></select>
+				</div>
+				<div class="cfg_row_right" id="CheckTime_Div">
+					<input type="button" class="switch" id="CheckTime" data=''/>
+				</div>
+			</div>
+			<div class="second" id="Decode_Div">
+				<div class="cfg_row_left" id="DecodeL">Decode Order</div>
+				<div class="cfg_row_right">
+					<select class="select" id="Decode"></select>
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row">
+			<div class="first" id="ConMode_Div">
+				<div class="cfg_row_left" id="ConModeL">Connect Mode</div>
+				<div class="cfg_row_right">
+					<select class="select" id="ConMode"></select>
+				</div>
+			</div>
+			<div class="second" id="SynChEn_Div">
+				<div class="cfg_row_left" id="SynChEnL">Sysn Ch</div>
+				<div class="cfg_row_right">
+					<input type="button" class="switch" id="SynChEn" data=''/>
+				</div>
+			</div>
+			<div class="second" id="TourTimeDiv" style="display:none;">
+				<div class="cfg_row_left" id="TourTimeL">SEQ time</div>
+				<div class="cfg_row_right">
+					<input id="TourTime" class="inputTxt" 
+					onkeyup="if(keyboardFilter(event)) {NumberRangeMaxEx(this, 600)}"
+					onblur="NumberRangeMin(this,10)" />
+					<label id="TourTimeSec">Sec(10-600)</label>
+				</div>
+			</div>
+		</div>
+		<div class="cfg_row">
+			<div class="cfg_row_left" id="NetListTip" style="width:auto;">NetWork</div>
+			<div id="NetListSplit" style="float:left; width:500px; border-bottom:1px solid gray; margin-top:15px">
+			</div>
+		</div>	
+		<div id="Digital_ligerGrid" style="display: none;"></div>
+		<div id="DigitalListDiv" style="width:100%; height:220px; position:relative;">
+			<div class="MaskDiv"></div>
+			<div id="DigitalList">
+				<div class="table-responsive">
+					<div class="table-head">
+						<table class="table grid" style="margin-bottom:0">
+							<colgroup>
+								<col style="width:10%">
+								<col style="width:20%">
+								<col style="width:20%">
+								<col style="width:25%">
+								<col style="width:15%">
+							</colgroup>
+							<thead>
+								<tr>
+									<th id="Head_No"></th>
+									<th id="Head_Name"></th>
+									<th id="Head_DevType"></th>
+									<th id="Head_IP"></th>
+									<th id="Head_RemoteCh"></th>
+								</tr>
+							</thead>
+						</table>
+				    </div>
+				    <div class="table-content">
+						<table id="DigitalTable" class="table grid">
+							<colgroup>
+								<col style="width:10%">
+								<col style="width:20%">
+								<col style="width:20%">
+								<col style="width:25%">
+								<col style="width:15%">
+							</colgroup>
+							<tbody>
+							</tbody>
+						</table>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="cfg_row">
+		<div class="btn_box" style="margin: 10px 0 0 -14px">
+			<button id="DigitalAdd" class="btn">Add</button>
+			<button id="DigitalDel" class="btn">Del</button>
+			<button id="DigitalCP" class="btn">Copy</button>
+			<button id="DigitalPaste" class="btn">Paste</button>
+			<button id="DigitalDe" class="btn" style="display:none;">Default</button>
+			<button id="DigitalRf" class="btn">Refresh</button>
+			<button id="DigitalSave" class="btn autoWidth">Save</button>
+		</div>
+	</div>
+</div>
